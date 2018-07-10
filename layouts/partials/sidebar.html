@@ -1,0 +1,14 @@
+{{ if or (and (eq .Kind "home") (in (.Param "homeLayout") "sidebar")) (and (eq .Kind "page") (in (.Param "singleLayout") "sidebar")) (and (ne .Kind (or "home" "page")) (in (.Param "listLayout") "sidebar")) }}
+<section class="sidebar
+	{{- if eq .Kind "home" -}}
+		{{ if in (.Param "homeLayout") "left" }} sidebar--left{{ end }}
+	{{- else if eq .Kind "page" }}
+		{{ if in (.Param "singleLayout") "left" }} sidebar--left{{ end }}
+	{{- else }}
+		{{ if in (.Param "listLayout") "left" }} sidebar--left{{ end }}
+	{{- end }} sidecards">
+	{{ partial "widgets/recent.html" . }}
+	{{ partial "widgets/categories.html" . }}
+	{{ partial "widgets/tags.html" . }}
+</section>
+{{ end }}

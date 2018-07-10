@@ -1,0 +1,14 @@
+{{- if and (.Site.Params.widgets.tags) (isset .Site.Taxonomies "tags") }}
+{{- if not (eq (len .Site.Taxonomies.tags) 0) }}
+<div class="sidecard">
+	<div class="widget widget-tags block">
+		<h3 class="widget__title">{{ T "widget-tags_title" }}</h3>
+		<div class="widget-tags__content widget__content">
+		{{- range $name, $items := .Site.Taxonomies.tags }}
+			<a class="widget-tags__link widget__link transition" href="{{ "tags/" | relLangURL }}{{ $name | urlize | lower }}" title="{{ $name | humanize }}">{{ $name | humanize }}{{ if $.Site.Params.widgets.tagsCounter }} ({{ $items.Count }}){{ end }}</a>
+		{{- end }}
+		</div>
+	</div>
+</div>
+{{- end }}
+{{- end }}

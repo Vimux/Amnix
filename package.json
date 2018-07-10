@@ -1,0 +1,31 @@
+{
+  "name": "amnix",
+  "version": "1.0.0",
+  "description": "Responsive and configurable Hugo theme",
+  "license": "MIT",
+  "dependencies": {},
+  "devDependencies": {
+    "eslint": "^4.19.1",
+    "eslint-config-happiness": "^10.2.1",
+    "eslint-plugin-import": "^2.12.0",
+    "eslint-plugin-node": "^6.0.1",
+    "eslint-plugin-promise": "^3.7.0",
+    "eslint-plugin-standard": "^3.1.0",
+    "stylelint": "^9.2.1",
+    "stylelint-order": "^0.8.1"
+  },
+  "scripts": {
+    "lint": "npm-run-all --parallel lint:*",
+    "lint:css": "stylelint static/css/*.css",
+    "lint:js": "eslint static/js/*.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vimux/amnix.git"
+  },
+  "bugs": {
+    "url": "https://github.com/vimux/amnix/issues"
+  },
+  "homepage": "https://github.com/vimux/amnix"
+}

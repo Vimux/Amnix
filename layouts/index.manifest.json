@@ -1,0 +1,43 @@
+{
+  "name": "{{ if .Site.Params.Manifest.name }}{{ .Site.Params.Manifest.name }}{{ else }}{{ .Site.Title }}{{ end }}",
+  "short_name": "{{ if .Site.Params.Manifest.shortName }}{{ .Site.Params.Manifest.shortName }}{{ else }}{{ .Site.Title }}{{ end }}",
+  "display": "{{ .Site.Params.Manifest.display | default "standalone" }}",
+  "background_color": "{{ .Site.Params.Manifest.backgroundColor | default "#33333a" }}",
+  "theme_color": "{{ .Site.Params.Manifest.themeColor | default "#5b5b67" }}",
+  {{- with .Site.Params.Manifest.description }}"description": "{{ . }}",{{ end }}
+  {{- with .Site.Params.Manifest.orientation }}"orientation": "{{ . }}",{{ end }}
+  {{- with .Site.Params.Manifest.startUrl }}"start_url": "{{ . }}",{{ end }}
+  {{- with .Site.Params.Manifest.scope }}"scope": "{{ . }}",{{ end }}
+  "icons": [
+    {
+      "src": "icons/48.png",
+      "sizes": "48x48",
+      "type": "image/png"
+    },
+    {
+      "src": "icons/72.png",
+      "sizes": "72x72",
+      "type": "image/png"
+    },
+    {
+      "src": "icons/96.png",
+      "sizes": "96x96",
+      "type": "image/png"
+    },
+    {
+      "src": "icons/144.png",
+      "sizes": "144x144",
+      "type": "image/png"
+    },
+    {
+      "src": "icons/192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "icons/512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

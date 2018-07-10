@@ -1,0 +1,8 @@
+<article class="post block">
+	{{- partial "post/post_featured.html" (dict "page" . ) }}
+	<header class="post__header">
+		<h1 class="post__title post__title--summary"><a class="post__title-link" href="{{ .RelPermalink }}">{{ .Title }}</a></h1>
+		{{ partial "post/post_datetime.html" . }}
+	</header>
+	<div class="post__content">{{ .Summary }}</div>
+</article>

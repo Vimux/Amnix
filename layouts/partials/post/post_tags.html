@@ -1,0 +1,8 @@
+{{ if isset $.Params "tags" }}
+{{ $tagsLen := len $.Params.tags }}
+{{ if gt $tagsLen 0 }}
+<div class="post__tags tags">
+	{{ range $k, $v := $.Params.tags }}<a class="post__tag transition" href="{{ "/tags/" | relLangURL }}{{ . | urlize | lower }}">{{ . }}</a>{{ end }}
+</div>
+{{ end }}
+{{ end }}

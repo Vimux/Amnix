@@ -1,0 +1,24 @@
+baseURL = "https://example.com/"
+languageCode = "en-us"
+title = "Amnix"
+theme = "amnix"
+paginate = 10
+
+[Params]
+  description = "Responsive and configurable Hugo theme"
+  homeLayout = "2 columns + sidebar"
+  listLayout = "2 columns + sidebar"
+  singleLayout = "content + sidebar"
+  mainSections = ["post"]
+
+[Params.Widgets]
+  recent = true
+  recentNum = 5
+  recentDate = true
+  categories = true
+  tags = true
+
+[Params.Share]
+  facebook = true
+  twitter = true
+  reddit = true

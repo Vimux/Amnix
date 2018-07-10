@@ -1,0 +1,12 @@
+name = "Amnix"
+license = "MIT"
+licenselink = "https://github.com/vimux/amnix/blob/master/LICENSE"
+description = "Responsive and configurable Hugo theme"
+homepage = "https://github.com/vimux/amnix/"
+tags = ["blog", "light", "disqus", "google analytics", "responsive"]
+features = []
+min_version = "0.38"
+
+[author]
+  name = "Vimux"
+  homepage = "https://github.com/vimux"

@@ -1,0 +1,9 @@
+{{- $img := ( .page.Resources.ByType "image").GetMatch "featured.*" }}
+{{- with $img }}
+	{{ $img320 := $img.Resize "320x" }}
+	{{ $img600 := $img.Resize "600x" }}
+	{{ $img900 := $img.Resize "900x" }}
+<figure class="post__featured featured">
+	<img class="featured__img" srcset="{{ $img320.RelPermalink }} 320w, {{ $img600.RelPermalink }} 600w, {{ $img900.RelPermalink }} 900w," src="{{ $img.RelPermalink }}" alt="{{ $img.Title }}">
+</figure>
+{{- end }}

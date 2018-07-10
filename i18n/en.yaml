@@ -1,0 +1,51 @@
+# Meta
+- id: lastmod-caption
+  translation: Updated
+
+# Post
+- id: post-related_title
+  translation: Related
+
+# Widgets
+- id: widget-recent_title
+  translation: Recent Posts
+
+- id: widget-categories_title
+  translation: Categories
+
+- id: widget-tags_title
+  translation: Tags
+
+# Share
+- id: share-caption
+  translation: Share on
+
+- id: save-caption
+  translation: Save on
+
+# Footer
+- id: footer_credits
+  translation: "Powered by <a href=\"https://gohugo.io/\" rel=\"nofollow noopener\" target=\"_blank\">Hugo</a> and <a href=\"https://github.com/vimux/amnix\" rel=\"nofollow noopener\" target=\"_blank\">Amnix</a> theme."
+
+# "No posts" empty state
+- id: empty_title
+  translation: "You don't have any posts yet!"
+
+- id: empty_text_start
+  translation: "As posts are added in your <code>mainSection</code> folders"
+
+- id: empty_text_end
+  translation: "they'll appear here"
+
+- id: empty_tip
+  translation: "<b>Tip:</b> You could change <code>mainSection</code> folders in your site config file."
+
+  # 404
+- id: page404_title
+  translation: "404 Page not found"
+
+- id: page404_lead
+  translation: "Sorry, the page you were looking for doesn't exist."
+
+- id: page404_link
+  translation: "Go back to main page"
