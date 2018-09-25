@@ -659,6 +659,10 @@ template {
 	font-size: 1.188rem;
 }
 
+.post__title-link {
+	display: inline-block;
+}
+
 .post__content {
 	margin-top: 1rem;
 }
@@ -881,6 +885,10 @@ template {
 
 .widget__item:last-child {
 	padding-bottom: 0;
+}
+
+.widget__link {
+	display: inline-block;
 }
 
 .widget__meta {
