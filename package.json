@@ -5,6 +5,7 @@
   "license": "MIT",
   "dependencies": {},
   "devDependencies": {
+    "eclint": "^2.8.1",
     "eslint": "^4.19.1",
     "eslint-config-happiness": "^10.2.1",
     "eslint-plugin-import": "^2.12.0",
@@ -22,9 +23,10 @@
     "iOS >= 9"
   ],
   "scripts": {
-    "lint": "npm-run-all --parallel lint:*",
+    "lint": "npm run lint:css && npm run lint:js && npm run lint:editorconfig",
     "lint:css": "stylelint static/css/*.css",
     "lint:js": "eslint static/js/*.js",
+    "lint:editorconfig": "eclint check '**/*.{html,css,js,json,md,toml,yaml,yml}'",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
