@@ -31,6 +31,9 @@
       }
     }
   },
+  "eslintConfig": {
+    "extends": "happiness"
+  },
   "scripts": {
     "lint": "npm run lint:css && npm run lint:js && npm run lint:editorconfig",
     "lint:css": "stylelint static/css/*.css",
