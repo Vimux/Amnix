@@ -8,11 +8,8 @@
     "autoprefixer": "^9.3.1",
     "eclint": "^2.8.1",
     "eslint": "^4.19.1",
-    "eslint-config-happiness": "^10.2.1",
-    "eslint-plugin-import": "^2.12.0",
-    "eslint-plugin-node": "^6.0.1",
-    "eslint-plugin-promise": "^3.7.0",
-    "eslint-plugin-standard": "^3.1.0",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-plugin-import": "^2.14.0",
     "postcss-cli": "^6.0.1",
     "stylelint": "^9.2.1",
     "stylelint-order": "^0.8.1"
@@ -32,7 +29,17 @@
     }
   },
   "eslintConfig": {
-    "extends": "happiness"
+    "extends": "airbnb-base",
+    "env": {
+      "browser": true
+    },
+    "rules": {
+      "indent": [
+        2,
+        "tab"
+      ],
+      "no-tabs": 0
+    }
   },
   "scripts": {
     "lint": "npm run lint:css && npm run lint:js && npm run lint:editorconfig",
