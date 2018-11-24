@@ -978,12 +978,12 @@ template {
 
 .footer__social {
 	display: flex;
-	margin-bottom: .5rem;
 	flex: 1 0 0;
 	flex-basis: 100%;
 	flex-wrap: wrap;
 	justify-content: center;
 	order: 0;
+	margin-bottom: .5rem;
 }
 
 @media screen and (min-width: 696px) {
