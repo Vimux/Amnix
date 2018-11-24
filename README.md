@@ -1,4 +1,4 @@
-# Amnix
+# Amnix [WIP]
 
 **Amnix** is a responsive and configurable [Hugo](https://gohugo.io/) theme.
 
@@ -11,7 +11,6 @@
 * Configurable main page content sections [`mainSections`]
 * Widgets
 * MathJax
-* Web App Manifest
 
 ## Installation
 
