@@ -517,11 +517,11 @@ template {
 	list-style: none;
 }
 
-.classlist .main-nav__list {
+.js .main-nav__list {
 	display: none;
 }
 
-.classlist .main-nav__btn {
+.js .main-nav__btn {
 	display: block;
 }
 
@@ -541,11 +541,11 @@ template {
 		display: inline-block;
 	}
 
-	.classlist .main-nav__list {
+	.js .main-nav__list {
 		display: block;
 	}
 
-	.classlist .main-nav__btn {
+	.js .main-nav__btn {
 		display: none;
 	}
 
