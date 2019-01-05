@@ -1,28 +1,26 @@
-{{ partial "header.html" . }}
-	<div class="wrapper wrapper--flex">
-		{{- $mainSections := .Site.Params.mainSections | default (slice "post") }}
-		{{- $paginator := .Paginate ( where .Site.RegularPages "Section" "in" $mainSections ) }}
-		{{- if ge $paginator.TotalNumberOfElements 1 }}
-		<div class="content">
-			<section class="cards">
-				{{- range $paginator.Pages }}
-				<div class="card{{ if and (in (.Param "homeLayout") "col") }} card--{{ if in (.Param "homeLayout") "3" }}3{{ else if in (.Param "homeLayout") "2" }}2{{ end }}col{{ end }}">
-					{{ .Render "summary" }}
-				</div>
-				{{- end }}
-			</section>
-			{{ partial "pagination.html" . }}
-		</div>
-		{{ partial "sidebar.html" . }}
-		{{- else }}
-		<div class="single">
-			<div class="post empty center block">
-				<div class="empty__icon">¯\_(ツ)_/¯</div>
-				<h3 class="empty__title">{{ T "empty_title" }}</h3>
-				<p class="empty__text">{{ T "empty_text_start" | safeHTML }} ({{ delimit (apply $mainSections "printf" "<code>content/%s</code>" ".") ", " | safeHTML }}), {{ T "empty_text_end" }}.</p>
-				<p class="empty__tip">{{ T "empty_tip" | safeHTML }}</p>
+{{ define "main" }}
+	{{- $mainSections := .Site.Params.mainSections | default (slice "post") }}
+	{{- $paginator := .Paginate ( where .Site.RegularPages "Section" "in" $mainSections ) }}
+	{{- if ge $paginator.TotalNumberOfElements 1 }}
+	<div class="content">
+		<section class="cards">
+			{{- range $paginator.Pages }}
+			<div class="card{{ if and (in (.Param "homeLayout") "col") }} card--{{ if in (.Param "homeLayout") "3" }}3{{ else if in (.Param "homeLayout") "2" }}2{{ end }}col{{ end }}">
+				{{ .Render "summary" }}
 			</div>
-		</div>
-		{{- end }}
+			{{- end }}
+		</section>
+		{{ partial "pagination.html" . }}
 	</div>
-{{ partial "footer.html" . }}
+	{{ partial "sidebar.html" . }}
+	{{- else }}
+	<div class="single">
+		<div class="post empty center block">
+			<div class="empty__icon">¯\_(ツ)_/¯</div>
+			<h3 class="empty__title">{{ T "empty_title" }}</h3>
+			<p class="empty__text">{{ T "empty_text_start" | safeHTML }} ({{ delimit (apply $mainSections "printf" "<code>content/%s</code>" ".") ", " | safeHTML }}), {{ T "empty_text_end" }}.</p>
+			<p class="empty__tip">{{ T "empty_tip" | safeHTML }}</p>
+		</div>
+	</div>
+	{{- end }}
+{{ end }}

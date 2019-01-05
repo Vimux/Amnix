@@ -1,21 +1,19 @@
-{{ partial "header.html" . }}
-	<div class="wrapper wrapper--flex">
-		<div class="content">
-			{{ if or .Title .Content }}
-			<section class="taxonomy">
-				{{ with .Title }}<h1 class="taxonomy__title">{{ . }}</h1>{{ end }}
-				{{ with .Content }}<div class="taxonomy__content{{ if not $.Title }} taxonomy__content--notitle{{ end }}">{{ . }}</div>{{ end }}
-			</section>
+{{ define "main" }}
+	<div class="content">
+		{{ if or .Title .Content }}
+		<section class="taxonomy">
+			{{ with .Title }}<h1 class="taxonomy__title">{{ . }}</h1>{{ end }}
+			{{ with .Content }}<div class="taxonomy__content{{ if not $.Title }} taxonomy__content--notitle{{ end }}">{{ . }}</div>{{ end }}
+		</section>
+		{{ end }}
+		<section class="cards">
+			{{ range .Paginator.Pages }}
+			<div class="card{{ if and (in (.Param "listLayout") "col") }} card--{{ if in (.Param "listLayout") "3" }}3{{ else if in (.Param "listLayout") "2" }}2{{ end }}col{{ end }}">
+				{{ .Render "summary" }}
+			</div>
 			{{ end }}
-			<section class="cards">
-				{{ range .Paginator.Pages }}
-				<div class="card{{ if and (in (.Param "listLayout") "col") }} card--{{ if in (.Param "listLayout") "3" }}3{{ else if in (.Param "listLayout") "2" }}2{{ end }}col{{ end }}">
-					{{ .Render "summary" }}
-				</div>
-				{{ end }}
-			</section>
-			{{ partial "pagination.html" . }}
-		</div>
-		{{ partial "sidebar.html" . }}
+		</section>
+		{{ partial "pagination.html" . }}
 	</div>
-{{ partial "footer.html" . }}
+	{{ partial "sidebar.html" . }}
+{{ end }}

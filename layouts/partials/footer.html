@@ -1,12 +1,6 @@
-	<footer class="footer">
-		<div class="footer__inner inner">
-			<div class="footer__copyright">© {{ now.Format "2006" }} {{ .Site.Title }}. <span class="footer__copyright-credits">{{ T "footer_credits" | safeHTML }}</span></div>
-			{{- partial "footer_social.html" . }}
-		</div>
-	</footer>
-{{- partial "footer_mathjax.html" . }}
-{{- if .Site.Menus.main }}
-<script src="{{ "js/menu.js" | relURL }}"></script>
-{{- end }}
-</body>
-</html>
+<footer class="footer">
+	<div class="footer__inner inner">
+		<div class="footer__copyright">© {{ now.Format "2006" }} {{ .Site.Title }}. <span class="footer__copyright-credits">{{ T "footer_credits" | safeHTML }}</span></div>
+		{{- partial "footer_social.html" . }}
+	</div>
+</footer>
