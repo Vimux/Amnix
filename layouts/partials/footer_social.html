@@ -22,11 +22,6 @@
 		{{ partial "svg/telegram.svg" (dict "class" $class "size" $size) }}
 	</a>
 	{{- end }}
-	{{- with .Site.Params.Social.googleplus }}
-	<a class="social__link transition" target="_blank" rel="noopener noreferrer" href="https://plus.google.com/{{ . }}">
-		{{ partial "svg/googleplus.svg" (dict "class" $class "size" $size) }}
-	</a>
-	{{- end }}
 	{{- with .Site.Params.Social.instagram }}
 	<a class="social__link transition" target="_blank" rel="noopener noreferrer" href="https://www.instagram.com/{{ . }}">
 		{{ partial "svg/instagram.svg" (dict "class" $class "size" $size) }}

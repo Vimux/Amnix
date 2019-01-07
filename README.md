@@ -99,7 +99,6 @@ googleAnalytics = "" # Enable Google Analytics by entering your tracking id
   facebook = "username"
   twitter = "username"
   telegram = "username"
-  googleplus = "profileid"
   instagram = "username"
   pinterest = "username"
   vk = "username"
@@ -124,7 +123,6 @@ googleAnalytics = "" # Enable Google Analytics by entering your tracking id
   reddit = true
   telegram = true
   linkedin = true
-  googleplus = true
   vk = true
   pocket = true
 
@@ -193,7 +191,7 @@ Available values: `content`, `content + sidebar`, `content + left sidebar`
 
 With **Amnix**, you have the option to display links to your social media profiles in the footer. To display them, set up `[Params.Social]` parameters in your site config file.
 
-Available social services: Email, Facebook, Twitter, Telegram, Google+, Instagram, Pinterest, VK, LinkedIn, GitHub, GitLab, Stack Overflow, Mastodon, Medium
+Available social services: Email, Facebook, Twitter, Telegram, Instagram, Pinterest, VK, LinkedIn, GitHub, GitLab, Stack Overflow, Mastodon, Medium
 
 ### Featured Images
 
