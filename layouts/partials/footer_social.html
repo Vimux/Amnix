@@ -2,70 +2,13 @@
 <div class="footer__social social">
 	{{- $class := "social__icon" }}
 	{{- $size := 32 }}
-	{{- with .Site.Params.Social.email }}
-	<a class="social__link transition" href="mailto:{{ . }}">
-		{{ partial "svg/email.svg" (dict "class" $class "size" $size) }}
-	</a>
-	{{- end }}
-	{{- with .Site.Params.Social.facebook }}
-	<a class="social__link transition" target="_blank" rel="noopener noreferrer" href="https://www.facebook.com/{{ . }}">
-		{{ partial "svg/facebook.svg" (dict "class" $class "size" $size) }}
-	</a>
-	{{- end }}
-	{{- with .Site.Params.Social.twitter }}
-	<a class="social__link transition" target="_blank" rel="noopener noreferrer" href="https://twitter.com/{{ . }}">
-		{{ partial "svg/twitter.svg" (dict "class" $class "size" $size) }}
-	</a>
-	{{- end }}
-	{{- with .Site.Params.Social.telegram }}
-	<a class="social__link transition" target="_blank" rel="noopener noreferrer" href="https://t.me/{{ . }}">
-		{{ partial "svg/telegram.svg" (dict "class" $class "size" $size) }}
-	</a>
-	{{- end }}
-	{{- with .Site.Params.Social.instagram }}
-	<a class="social__link transition" target="_blank" rel="noopener noreferrer" href="https://www.instagram.com/{{ . }}">
-		{{ partial "svg/instagram.svg" (dict "class" $class "size" $size) }}
-	</a>
-	{{- end }}
-	{{- with .Site.Params.Social.pinterest }}
-	<a class="social__link transition" target="_blank" rel="noopener noreferrer" href="https://www.pinterest.com/{{ . }}">
-		{{ partial "svg/pinterest.svg" (dict "class" $class "size" $size) }}
-	</a>
-	{{- end }}
-	{{- with .Site.Params.Social.vk }}
-	<a class="social__link transition" target="_blank" rel="noopener noreferrer" href="https://vk.com/{{ . }}">
-		{{ partial "svg/vk.svg" (dict "class" $class "size" $size) }}
-	</a>
-	{{- end }}
-	{{- with .Site.Params.Social.linkedin }}
-	<a class="social__link transition" target="_blank" rel="noopener noreferrer" href="https://linkedin.com/in/{{ . }}">
-		{{ partial "svg/linkedin.svg" (dict "class" $class "size" $size) }}
-	</a>
-	{{- end }}
-	{{- with .Site.Params.Social.github }}
-	<a class="social__link transition" target="_blank" rel="noopener noreferrer" href="https://github.com/{{ . }}">
-		{{ partial "svg/github.svg" (dict "class" $class "size" $size) }}
-	</a>
-	{{- end }}
-	{{- with .Site.Params.Social.gitlab }}
-	<a class="social__link transition" target="_blank" rel="noopener noreferrer" href="https://gitlab.com/{{ . }}">
-		{{ partial "svg/gitlab.svg" (dict "class" $class "size" $size) }}
-	</a>
-	{{- end }}
-	{{- with .Site.Params.Social.stackoverflow }}
-	<a class="social__link transition" target="_blank" rel="noopener noreferrer" href="https://stackoverflow.com/users/{{ . }}">
-		{{ partial "svg/stackoverflow.svg" (dict "class" $class "size" $size) }}
-	</a>
-	{{- end }}
-	{{- with .Site.Params.Social.mastodon }}
-	<a class="social__link transition" target="_blank" rel="noopener noreferrer" href="https://mastodon.social/@{{ . }}">
-		{{ partial "svg/mastodon.svg" (dict "class" $class "size" $size) }}
-	</a>
-	{{- end }}
-	{{- with .Site.Params.Social.medium }}
-	<a class="social__link transition" target="_blank" rel="noopener noreferrer" href="https://medium.com/@{{ . }}">
-		{{ partial "svg/medium.svg" (dict "class" $class "size" $size) }}
-	</a>
+
+	{{- range sort .Site.Data.social.icons "weight" }}
+		{{- if isset $.Site.Params.Social .id }}
+		<a class="social__link transition" target="_blank" rel="noopener noreferrer" href="{{ printf .url (index $.Site.Params.Social .id) }}">
+			{{ partial .icon (dict "class" $class "size" $size) }}
+		</a>
+		{{- end }}
 	{{- end }}
 </div>
 {{- end }}
