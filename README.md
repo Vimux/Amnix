@@ -153,18 +153,22 @@ googleAnalytics = "" # Enable Google Analytics by entering your tracking id
 ### Front Matter example
 
 ```yaml
+# Common-Defined params
 title: "Example article title"
 date: 2017-08-21
 description: "Example article description"
-comments: true # Enable Disqus for specific page
-mathjax: true # Enable MathJax for specific page
-singleLayout: "content + sidebar" # Change layout for specific page
 categories:
   - "Category 1"
   - "Category 2"
 tags:
   - "Test"
   - "Another test"
+
+# Theme-Defined params
+singleLayout: "content + sidebar" # Change layout for specific single page
+comments: true # Enable/disable Disqus for specific page
+mathjax: true # Enable/disable MathJax for specific page
+related: true # Enable/disable Related content for specific page
 ```
 
 *For more information about front matter variables read [Hugo Front Matter](https://gohugo.io/content-management/front-matter)*
@@ -199,9 +203,11 @@ You can add featured images to your content pages. Just put `featured.*` image f
 
 ### Web App Manifest
 
-[Web App Manifest](https://developers.google.com/web/fundamentals/web-app-manifest/) is a simple json file with basic site info like name, description, icons, etc. This file tells the browser about your web application and how it should behave when "installed" on the users mobile device or desktop.
+[Web App Manifest](https://developers.google.com/web/fundamentals/web-app-manifest/) is a simple json file with basic site info like name, description, icons, etc. This file tells the browser about your web application and how it should behave when "installed" (PWA) on the users mobile device or desktop.
 
-To activate Web App Manifest you need to specify `[Params.Manifest]` parameters in your site config file. Add next block in the config file:
+To activate Web App Manifest you need to define `MANIFEST` custom output format & specify `[Params.Manifest]` parameters in your site config file.
+
+First of all, you should define `MANIFEST` custom output format:
 
 ```toml
 [outputFormats]
@@ -212,14 +218,16 @@ To activate Web App Manifest you need to specify `[Params.Manifest]` parameters 
     notAlternative = true
 ```
 
-As a final step, include [custom output format](https://gohugo.io/templates/output-formats) `MANIFEST` for `home` Kind attribute.
+Then, include `MANIFEST` output format for `home` Kind attribute:
 
 ```toml
 [outputs]
   home = ["HTML", "RSS", "MANIFEST"]
 ```
 
-*To verify if your manifest file is configured properly and works well, open Chrome DevTools (Press F12 in Chrome) → Application → Manifest*
+After that, you can specify `[Params.Manifest]` parameters.
+
+*To verify that your manifest file is configured properly and works well, run Hugo server and open Chrome DevTools (Press F12 in Chrome) → Application → Manifest*
 
 ## Contributing
 
