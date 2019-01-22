@@ -16,17 +16,31 @@
 
 ## Installation
 
-First of all, you will need to [install Hugo](https://gohugo.io/getting-started/quick-start/#step-1-install-hugo) and [create new site](https://gohugo.io/getting-started/quick-start/#step-2-create-a-new-site). After that, you ready to install **Amnix** theme.
+*First of all, you will need to [install Hugo](https://gohugo.io/getting-started/quick-start/#step-1-install-hugo) and [create new site](https://gohugo.io/getting-started/quick-start/#step-2-create-a-new-site). Also, you have git installed on your machine and you are familiar with basic git usage. After that, you ready to install **Amnix**.*
 
-There are three different ways you can install **Amnix**:
+There are three different ways you can install **Amnix**. Choose one of the installation methods listed below and follow the instructions.
 
-- **A**. [Git submodule (**Recommended**)](#step-1a-git-submodule-recommended)
-- **B**. [Git clone](#step-1b-git-clone)
-- **C**. [Download ZIP and manual install](#step-1c-download-zip-and-manual-install)
+- **A**. [Git clone](#option-a-git-clone)
+- **B**. [Git submodule](#option-b-git-submodule)
+- **C**. [Download ZIP and manual install](#option-c-download-zip-and-manual-install)
 
-*For more information read the [Install and Use Themes](https://gohugo.io/themes/installing-and-using-themes/)*
+*For more information read the "[Install and Use Themes](https://gohugo.io/themes/installing-and-using-themes/)"*.
 
-### 1A. Git submodule (Recommended)
+### Option A. Git clone
+
+In your Hugo site directory, run:
+
+```
+git clone https://github.com/vimux/amnix themes/amnix
+```
+
+Next, edit your `config.toml` configuration file and add parameter:
+
+```
+theme = "amnix"
+```
+
+### Option B. Git submodule
 
 In your Hugo site directory, run:
 
@@ -42,13 +56,9 @@ theme = "amnix"
 
 *You can [read the GitHub documentation for submodules](https://github.com/blog/2104-working-with-submodules) or those found on [Git's website](https://git-scm.com/book/en/v2/Git-Tools-Submodules) for more information*
 
-### 1B. Git clone
+### Option C. Download ZIP and manual install
 
-In your Hugo site directory, run:
-
-```
-git clone https://github.com/vimux/amnix themes/amnix
-```
+**[Download ZIP](https://github.com/vimux/amnix/archive/master.zip)** and extract to the `themes/amnix`
 
 Next, edit your `config.toml` configuration file and add parameter:
 
@@ -56,15 +66,17 @@ Next, edit your `config.toml` configuration file and add parameter:
 theme = "amnix"
 ```
 
-### 1C. Download ZIP and manual install
+***
 
-[Download ZIP](https://github.com/vimux/amnix/archive/master.zip) and extract to the `themes/amnix` directory
-
-Next, edit your `config.toml` configuration file and add parameter:
+You can run your site in Hugo server mode:
 
 ```
-theme = "amnix"
+hugo server
 ```
+
+Now you can go to [localhost:1313](http://localhost:1313) webpage and the Amnix theme should be visible.
+
+After you make sure that **Amnix** works, you may start customizing the theme if it's needed.
 
 ## Configuration
 
@@ -173,11 +185,13 @@ related: true # Enable/disable Related content for specific page
 
 *For more information about front matter variables read [Hugo Front Matter](https://gohugo.io/content-management/front-matter)*
 
-### Layouts
+### Configuration options
+
+#### Layouts
 
 **Amnix** comes with several layout options for home, list and single pages.
 
-#### Home & List layouts
+##### Home & List layouts
 
 Use `homeLayout` parameter in site config to configure home page layout.
 
@@ -185,23 +199,23 @@ Use `listLayout` parameter in site config to configure list pages layout.
 
 Available values: `1 column`, `2 columns`, `3 columns`, `1 column + sidebar`, `2 columns + sidebar`, `3 columns + sidebar`, `1 column + left sidebar`, `2 columns + left sidebar`, `3 columns + left sidebar`
 
-#### Single layouts
+##### Single layouts
 
 Use `singleLayout` parameter in site config to configure single pages layout.
 
 Available values: `content`, `content + sidebar`, `content + left sidebar`
 
-### Footer Social Links
+#### Footer Social Links
 
 With **Amnix**, you have the option to display links to your social media profiles in the footer. To display them, set up `[Params.Social]` parameters in your site config file.
 
 Available social services: Email, Facebook, Twitter, Telegram, Instagram, Pinterest, VK, LinkedIn, GitHub, GitLab, Stack Overflow, Mastodon, Medium
 
-### Featured Images
+#### Featured Images
 
 You can add featured images to your content pages. Just put `featured.*` image file in [page bundle](https://gohugo.io/content-management/page-bundles/).
 
-### Web App Manifest
+#### Web App Manifest
 
 [Web App Manifest](https://developers.google.com/web/fundamentals/web-app-manifest/) is a simple json file with basic site info like name, description, icons, etc. This file tells the browser about your web application and how it should behave when "installed" (PWA) on the users mobile device or desktop.
 
