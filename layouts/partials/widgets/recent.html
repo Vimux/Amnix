@@ -1,11 +1,11 @@
-{{- if and (.Site.Params.Widgets.recent) ((where .Site.RegularPages "Section" "in" (.Site.Params.mainSections | default (slice "post")))) }}
+{{- if and (.Site.Params.Widgets.recent) (where .Site.RegularPages "Section" "in" .Site.Params.mainSections) }}
 <div class="sidecard">
 	<div class="widget widget-recent block">
 		<h3 class="widget__title">{{ T "widget-recent_title" }}</h3>
 		<div class="widget__content">
 			<ul class="widget__list">
 			{{- $recentNum := (.Site.Params.widgets.recentNum | default 5) }}
-			{{- range first $recentNum (where .Site.RegularPages "Section" "in" (.Site.Params.mainSections | default (slice "post"))) }}
+			{{- range first $recentNum (where .Site.RegularPages "Section" "in" .Site.Params.mainSections) }}
 				{{- if .Title }}
 				<li class="widget__item">
 					<a class="widget__link" href="{{ .RelPermalink }}">{{ .Title }}</a>

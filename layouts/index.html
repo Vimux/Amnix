@@ -1,5 +1,5 @@
 {{ define "main" }}
-	{{- $mainSections := .Site.Params.mainSections | default (slice "post") }}
+	{{- $mainSections := .Site.Params.mainSections }}
 	{{- $paginator := .Paginate ( where .Site.RegularPages "Section" "in" $mainSections ) }}
 	{{- if ge $paginator.TotalNumberOfElements 1 }}
 	<div class="content">
