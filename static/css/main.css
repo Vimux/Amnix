@@ -421,10 +421,6 @@ template {
 	background-color: #33333a;
 }
 
-.header__inner {
-	border-bottom: 1px solid #5b5b67;
-}
-
 .logo {
 	font-weight: 600;
 	color: #9f9fab;
@@ -494,6 +490,10 @@ template {
 	border-bottom: 1px solid #5b5b67;
 }
 
+.main-nav__item:first-child {
+	border-top: 1px solid #5b5b67;
+}
+
 .main-nav__item:last-child {
 	border-bottom: 0;
 }
@@ -527,7 +527,7 @@ template {
 
 .main-nav__list.main-nav__list--active {
 	position: absolute;
-	top: 57px;
+	top: 3.5rem;
 	left: 0;
 	display: block;
 	width: 100%;
@@ -561,6 +561,7 @@ template {
 
 	.main-nav__item:first-child {
 		margin-left: 1rem;
+		border: 0;
 	}
 
 	.main-nav__list.main-nav__list--active {
