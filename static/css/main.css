@@ -517,12 +517,12 @@ template {
 	list-style: none;
 }
 
-.js .main-nav__list {
+.no-js .main-nav__btn {
 	display: none;
 }
 
-.js .main-nav__btn {
-	display: block;
+.js .main-nav__list {
+	display: none;
 }
 
 .main-nav__list.main-nav__list--active {
@@ -543,10 +543,6 @@ template {
 
 	.js .main-nav__list {
 		display: block;
-	}
-
-	.js .main-nav__btn {
-		display: none;
 	}
 
 	.main-nav__btn {
