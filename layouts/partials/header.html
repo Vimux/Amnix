@@ -1,6 +1,6 @@
 <header class="header">
 	<div class="header__inner inner">
-		<a class="logo{{ if eq .URL "/" }} logo--active{{ end }}" href="{{ "" | relURL }}">{{ .Site.Title }}</a>
+		<a class="logo" href="{{ "" | relURL }}">{{ .Site.Title }}</a>
 		{{- partial "header_menu.html" . }}
 	</div>
 </header>

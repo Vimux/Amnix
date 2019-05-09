@@ -423,16 +423,12 @@ template {
 
 .logo {
 	font-weight: 600;
-	color: #9f9fab;
+	color: #fff;
 }
 
 .logo:hover {
 	color: #fff;
 	text-decoration: none;
-}
-
-.logo--active {
-	color: #fff;
 }
 
 .main-menu {
