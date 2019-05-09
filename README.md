@@ -100,6 +100,7 @@ googleAnalytics = "" # Enable Google Analytics by entering your tracking id
   singleLayout = "content + sidebar" # Configure layout for single pages
   mainSections = ["post"] # Set main page sections
   dateFormat = "January 02, 2006" # Change the format of dates
+  customCSS = ["css/custom.css"] # Include custom CSS files
   comments = true # Enable comments for all site pages
   related = true # Enable Related Content (See https://gohugo.io/content-management/related/)
   mathjax = true # Enable MathJax for all site pages
@@ -204,6 +205,24 @@ Available values: `1 column`, `2 columns`, `3 columns`, `1 column + sidebar`, `2
 Use `singleLayout` parameter in site config to configure single pages layout.
 
 Available values: `content`, `content + sidebar`, `content + left sidebar`
+
+#### Custom CSS
+
+If you want to include custom CSS files, you need to assign an array of references in site config file (`config.toml` by default) like following:
+
+```toml
+[Params]
+  customCSS = ["css/custom.css"]
+```
+
+Of course, you can reference as many CSS files as you want. Their paths need to be relative to the `static` folder of your Hugo site:
+
+```toml
+[Params]
+  customCSS = ["css/custom.css", "css/another.css"]
+```
+
+All these CSS files will be added through the `head.html` partial after the built-in CSS file.
 
 #### Footer Social Links
 
