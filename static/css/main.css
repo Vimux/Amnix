@@ -639,6 +639,7 @@ template {
 }
 
 .post__featured {
+	min-height: 1px; /* Workaround for IE11 flexbox img height issue https://github.com/philipwalton/flexbugs/issues/75 */
 	margin: -1rem -1rem 1rem;
 }
 
