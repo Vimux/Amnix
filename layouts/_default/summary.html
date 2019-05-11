@@ -4,5 +4,7 @@
 		<h1 class="post__title post__title--summary"><a class="post__title-link" href="{{ .RelPermalink }}">{{ .Title }}</a></h1>
 		{{ partial "post/post_datetime.html" . }}
 	</header>
-	<div class="post__content">{{ .Summary }}</div>
+	{{- with .Summary }}
+	<div class="post__content">{{ . }}</div>
+	{{- end }}
 </article>
