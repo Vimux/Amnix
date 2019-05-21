@@ -264,12 +264,11 @@ After that, you can specify `[Params.Manifest]` parameters.
 
 ## Contributing
 
-See [CONTRIBUTING.md](CONTRIBUTING.md)
+See [CONTRIBUTING.md](https://github.com/vimux/amnix/blob/master/CONTRIBUTING.md)
 
 ## License
 
 **Amnix** is licensed under the [MIT License](https://github.com/vimux/amnix/blob/master/LICENSE).
 
-Social media icons based on:
-
-* [SuperTinyIcons](https://github.com/edent/SuperTinyIcons) (MIT License)
+* Social media icons based on [SuperTinyIcons](https://github.com/edent/SuperTinyIcons) (MIT License)
+* CSS Reset based on [Bootstrap Reboot](https://github.com/twbs/bootstrap/blob/master/dist/css/bootstrap-reboot.css) (MIT License)
