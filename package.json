@@ -5,14 +5,13 @@
   "license": "MIT",
   "dependencies": {},
   "devDependencies": {
-    "autoprefixer": "^9.3.1",
-    "eclint": "^2.8.1",
-    "eslint": "^5.9.0",
+    "autoprefixer": "^9.6.0",
+    "eslint": "^5.16.0",
     "eslint-config-airbnb-base": "^13.1.0",
-    "eslint-plugin-import": "^2.14.0",
-    "postcss-cli": "^6.0.1",
-    "stylelint": "^9.8.0",
-    "stylelint-order": "^2.0.0"
+    "eslint-plugin-import": "^2.17.3",
+    "postcss-cli": "^6.1.2",
+    "stylelint": "^10.1.0",
+    "stylelint-order": "^3.0.0"
   },
   "browserslist": [
     "> 0.25%",
@@ -38,13 +37,16 @@
         2,
         "tab"
       ],
-      "comma-dangle": ["error", {
-        "arrays": "always-multiline",
-        "objects": "always-multiline",
-        "imports": "always-multiline",
-        "exports": "always-multiline",
-        "functions": "ignore"
-      }],
+      "comma-dangle": [
+        "error",
+        {
+          "arrays": "always-multiline",
+          "objects": "always-multiline",
+          "imports": "always-multiline",
+          "exports": "always-multiline",
+          "functions": "ignore"
+        }
+      ],
       "no-tabs": 0
     }
   },
