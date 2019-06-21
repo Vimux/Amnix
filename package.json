@@ -51,15 +51,13 @@
     }
   },
   "scripts": {
-    "lint": "npm run lint:css && npm run lint:js && npm run lint:editorconfig",
+    "lint": "npm run lint:css && npm run lint:js",
     "lint:css": "stylelint static/css/*.css",
     "lint:js": "eslint static/js/*.js",
-    "lint:editorconfig": "eclint check '**/*.{html,css,js,json,md,toml,yaml,yml}'",
-    "fix": "npm run fix:prefixes && npm run fix:css && npm run fix:js && npm run fix:editorconfig",
+    "fix": "npm run fix:prefixes && npm run fix:css && npm run fix:js",
     "fix:prefixes": "postcss -r static/css/*.css",
     "fix:css": "stylelint static/css/*.css --fix",
     "fix:js": "eslint static/js/*.js --fix",
-    "fix:editorconfig": "eclint fix '**/*.{html,css,js,json,md,toml,yaml,yml}'",
     "test": "npm run lint"
   },
   "repository": {
