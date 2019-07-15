@@ -119,7 +119,7 @@ googleAnalytics = "" # Enable Google Analytics by entering your tracking id
   github = "username"
   gitlab = "username"
   stackoverflow = "numberid"
-  mastodon = "username"
+  mastodon = "https://some.instance/@username"
   medium = "username"
 
 [Params.Widgets]
