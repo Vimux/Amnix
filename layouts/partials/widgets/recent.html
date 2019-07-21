@@ -9,7 +9,7 @@
 				{{- if .Title }}
 				<li class="widget__item">
 					<a class="widget__link" href="{{ .RelPermalink }}">{{ .Title }}</a>
-					{{ if .Site.Params.Widgets.recentDate -}}<div class="widget__meta"><time class="widget__datetime">{{ .Date.Format ( .Site.Params.dateFormat | default "January 02, 2006" )}}</time></div>{{ end }}
+					{{ if .Site.Params.Widgets.recentDate -}}<div class="widget__meta"><time class="widget__datetime">{{ .Date.Format ( .Site.Params.dateFormat | default "January 02, 2006" ) }}</time></div>{{ end }}
 				</li>
 				{{- end }}
 			{{- end }}
