@@ -1,6 +1,6 @@
 {{ define "main" }}
 	{{- $mainSections := .Site.Params.mainSections }}
-	{{- $paginator := .Paginate ( where .Site.RegularPages "Section" "in" $mainSections ) }}
+	{{- $paginator := .Paginate (where .Site.RegularPages "Type" "in" $mainSections) }}
 	{{- if ge $paginator.TotalNumberOfElements 1 }}
 	<div class="content">
 		<section class="cards">
