@@ -1,7 +1,7 @@
 {{ define "main" }}
 	<section class="single">
 		<article class="post block">
-			{{- partial "post/post_featured.html" (dict "page" . ) }}
+			{{- partial "post/post_featured.html" (dict "page" . "IsSingle" true) }}
 			<header class="post__header">
 				<h1 class="post__title">{{ .Title }}</h1>
 				{{ partial "post/post_datetime.html" . }}

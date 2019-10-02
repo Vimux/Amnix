@@ -1,17 +1,44 @@
-{{- $img := ( .page.Resources.ByType "image").GetMatch "featured.*" }}
-{{- $link := .link }}
+{{- with .page.Resources.ByType "image" }}
+	{{- $link := $.link -}}
+	{{- $IsSingle := $.IsSingle -}}
+	{{- $match := $.page.Params.featured -}}
+	{{- $featuredMap := "" -}}
 
-{{- with $img }}
-	{{ $img320 := $img.Resize "320x" }}
-	{{ $img600 := $img.Resize "600x" }}
-	{{ $img900 := $img.Resize "900x" }}
-<figure class="post__featured featured">
-	{{- with $link }}
-	<a class="featured__link" href="{{ . }}">
-		<img class="featured__img" srcset="{{ $img320.RelPermalink }} 320w, {{ $img600.RelPermalink }} 600w, {{ $img900.RelPermalink }} 900w," src="{{ $img.RelPermalink }}" alt="{{ $img.Title }}">
-	</a>
-	{{ else }}
-		<img class="featured__img" srcset="{{ $img320.RelPermalink }} 320w, {{ $img600.RelPermalink }} 600w, {{ $img900.RelPermalink }} 900w," src="{{ $img.RelPermalink }}" alt="{{ $img.Title }}">
-	{{ end }}
-</figure>
+	{{- $IsMap := reflect.IsMap $match -}}
+	{{- if $IsMap }}
+		{{- $featuredMap = $match -}}
+		{{- $match = $match.url -}}
+	{{- end }}
+
+	{{- $featured := .GetMatch ($match | default "{featured.*,thumbnail.*}") -}}
+	{{ if and $featured (not (and $IsSingle ($.page.Param "featured.previewOnly"))) }}
+		{{ $featured320 := $featured.Resize "320x" }}
+		{{ $featured600 := $featured.Resize "600x" }}
+		{{ $featured900 := $featured.Resize "900x" }}
+		<figure class="post__featured featured">
+			{{- with $link }}<a class="featured__link" href="{{ . }}">{{ end }}
+				<img class="featured__img" srcset="{{ $featured320.RelPermalink }} 320w, {{ $featured600.RelPermalink }} 600w, {{ $featured900.RelPermalink }} 900w," src="{{ $featured.RelPermalink }}" alt="
+					{{- with $featuredMap -}}
+						{{- .alt | default $featured.Title -}}
+					{{- else -}}
+						{{- $featured.Title -}}
+					{{- end -}}
+				"/>
+			{{- with $link }}</a>{{ end }}
+			{{- with $IsSingle }}
+				{{- with $featuredMap }}
+					{{- if or .caption .credit }}
+					<figcaption class="featured__figcaption">
+						{{- with .caption }}
+						<div class="featured__caption">{{ . | markdownify }}</div>
+						{{- end }}
+						{{- with .credit }}
+						<cite class="featured__credit">{{ . | markdownify }}</cite>
+						{{- end }}
+					</figcaption>
+					{{- end }}
+				{{- end }}
+			{{- end }}
+		</figure>
+	{{- end }}
 {{- end }}

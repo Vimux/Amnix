@@ -5,7 +5,7 @@ description = "Responsive and configurable Hugo theme"
 homepage = "https://github.com/vimux/amnix/"
 tags = ["blog", "light", "disqus", "google analytics", "responsive"]
 features = []
-min_version = "0.38"
+min_version = "0.54.0"
 
 [author]
   name = "Vimux"

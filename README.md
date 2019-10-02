@@ -107,6 +107,9 @@ googleAnalytics = "" # Enable Google Analytics by entering your tracking id
   mathjaxPath = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/MathJax.js" # Specify MathJax path. Optional
   mathjaxConfig = "TeX-AMS-MML_HTMLorMML" # Specify MathJax config. Optional
 
+[Params.Featured]
+  previewOnly = false # Show only preview featured image
+
 [Params.Social] # Site Social block
   email = "example@example.com"
   facebook = "username"
@@ -182,6 +185,12 @@ singleLayout: "content + sidebar" # Change layout for specific single page
 comments: true # Enable/disable Disqus for specific page
 mathjax: true # Enable/disable MathJax for specific page
 related: true # Enable/disable Related content for specific page
+featured:
+  url: image.jpg # relative path of the image
+  alt: A scale model of the Eiffel tower # alternate text for the image
+  caption: Eiffel tower model # image caption
+  credit: Unknown author # image credit
+  previewOnly: false # show only preview image (true/false)
 ```
 
 *For more information about front matter variables read [Hugo Front Matter](https://gohugo.io/content-management/front-matter)*
@@ -230,9 +239,33 @@ With **Amnix**, you have the option to display links to your social media profil
 
 Available social services: Email, Facebook, Twitter, Telegram, Instagram, Pinterest, VK, LinkedIn, GitHub, GitLab, Stack Overflow, Mastodon, Medium
 
-#### Featured Images
+#### Featured Image
 
-You can add featured images to your content pages. Just put `featured.*` image file in [page bundle](https://gohugo.io/content-management/page-bundles/).
+There are two main different ways to add a featured image for a page.
+
+**Option 1.** Put `featured.*` or `thumbnail.*` image file in the
+[page bundle](https://gohugo.io/content-management/page-bundles/).
+
+**Option 2.** Put any image in the page bundle & specify `featured` param in the page's front matter.
+
+You may put any image in the page bundle and specify `featured` param in the page's front matter:
+
+```yaml
+featured: image.jpg
+```
+
+Or you can add some additional params like `alt`, `caption`, `credit` and `previewOnly`:
+
+```yaml
+featured:
+  url: image.jpg
+  alt: A scale model of the Eiffel tower standing on a map
+  caption: Eiffel tower model
+  credit: Unknown author
+  previewOnly: false
+```
+
+**Note**: `caption` and `credit` appear only on single pages, not summaries.
 
 #### Web App Manifest
 
