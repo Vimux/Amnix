@@ -27,7 +27,7 @@ Directory structure of this page:
 ```
 content
 └── post
-    └── featured-images // single page folder (page bundle)
+    └── featured-image // single page folder (page bundle)
         ├── featured.png // featured image
         └── index.md // page content file
 ```
