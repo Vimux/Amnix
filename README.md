@@ -146,11 +146,11 @@ googleAnalytics = "" # Enable Google Analytics by entering your tracking id
   name = "Amnix"
   shortName = "Amnix"
   display = "standalone"
+  startUrl = "/"
   backgroundColor = "#33333a"
   themeColor = "#5b5b67"
   description = "Responsive and configurable Hugo theme"
   orientation = "portrait"
-  startUrl = "/"
   scope = "/"
 
 [outputFormats]
@@ -269,11 +269,14 @@ featured:
 
 #### Web App Manifest
 
-[Web App Manifest](https://developers.google.com/web/fundamentals/web-app-manifest/) is a simple json file with basic site info like name, description, icons, etc. This file tells the browser about your web application and how it should behave when "installed" (PWA) on the users mobile device or desktop.
+[Web App Manifest](https://developers.google.com/web/fundamentals/web-app-manifest/) is a simple json file with basic
+site info like name, description, icons, etc. This file tells the browser about your web application and how it should
+behave when "installed" (as PWA) on the users mobile device or desktop.
 
-To activate Web App Manifest you need to define `MANIFEST` custom output format & specify `[Params.Manifest]` parameters in your site config file.
+To activate Web App Manifest, define `MANIFEST` as custom output format and include this for `home` Kind attribute in
+your site config file. Here's how to make it.
 
-First of all, you should define `MANIFEST` custom output format:
+First of all, you should define `MANIFEST` custom output format [`config.toml`]:
 
 ```toml
 [outputFormats]
@@ -284,16 +287,33 @@ First of all, you should define `MANIFEST` custom output format:
     notAlternative = true
 ```
 
-Then, include `MANIFEST` output format for `home` Kind attribute:
+Then, include `MANIFEST` output format for `home` Kind attribute [`config.toml`]:
 
 ```toml
 [outputs]
   home = ["HTML", "RSS", "MANIFEST"]
 ```
 
-After that, you can specify `[Params.Manifest]` parameters.
+After that, Web App Manifest file will be generated. Still, it's better to specify `[Params.Manifest]` params to make
+sure that everything works as expected.
 
-*To verify that your manifest file is configured properly and works well, run Hugo server and open Chrome DevTools (Press F12 in Chrome) → Application → Manifest*
+| Web App Manifest Property | `.Site.Params.Manifest` Key | Default Value | Type        |
+| ------------------------- | --------------------------- | ------------- | ----------- |
+| name                      | name                        | `.Site.Title` | required    |
+| short_name                | shortName                   | `.Site.Title` | required    |
+| display                   | display                     | `standalone`  | required    |
+| start_url                 | startUrl                    | `/`           | required    |
+| background_color          | backgroundColor             | `#33333a`     | recommended |
+| theme_color               | themeColor                  | `#5b5b67`     | recommended |
+| description               | description                 |               | recommended |
+| orientation               | orientation                 |               | recommended |
+| scope                     | scope                       |               | recommended |
+| icons\*                   |                             |               | required    |
+
+\* You can't customize manifest icons through config params, only by replacing icon files.
+
+*To verify that your manifest file is configured properly and works well, run Hugo server and open Chrome DevTools
+(Press F12 in Chrome) → Application → Manifest*
 
 ## Contributing
 

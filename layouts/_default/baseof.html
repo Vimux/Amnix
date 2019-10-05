@@ -24,7 +24,7 @@
 	<link rel="icon" href="{{ "icons/16.png" | relURL }}" sizes="16x16" type="image/png">
 	<link rel="icon" href="{{ "icons/32.png" | relURL }}" sizes="32x32" type="image/png">
 	<link rel="icon" href="{{ "icons/48.png" | relURL }}" sizes="48x48" type="image/png">
-	{{- if and (.Site.Params.Manifest) ((.Site.GetPage "home").OutputFormats.Get "manifest") -}}
+	{{- with ((.Site.GetPage "home").OutputFormats.Get "manifest") }}
 	<link rel="manifest" href="{{ "manifest.json" | relURL }}">
 	{{- end }}
 	{{- if not .Site.IsServer }}
