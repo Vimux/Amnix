@@ -16,9 +16,12 @@
 
 ## Installation
 
-*First of all, you will need to [install Hugo](https://gohugo.io/getting-started/quick-start/#step-1-install-hugo) and [create new site](https://gohugo.io/getting-started/quick-start/#step-2-create-a-new-site). Also, you have git installed on your machine and you are familiar with basic git usage. After that, you ready to install **Amnix**.*
+*First of all, you will need to [install Hugo](https://gohugo.io/getting-started/quick-start/#step-1-install-hugo) and
+[create new site](https://gohugo.io/getting-started/quick-start/#step-2-create-a-new-site). Also, you have git installed
+on your machine and you are familiar with basic git usage. After that, you ready to install **Amnix**.*
 
-There are three different ways you can install **Amnix**. Choose one of the installation methods listed below and follow the instructions.
+There are three different ways you can install **Amnix**. Choose one of the installation methods listed below and follow
+the instructions.
 
 - **A**. [Git clone](#option-a-git-clone)
 - **B**. [Git submodule](#option-b-git-submodule)
@@ -54,7 +57,8 @@ Next, edit your `config.toml` configuration file and add parameter:
 theme = "amnix"
 ```
 
-*You can [read the GitHub documentation for submodules](https://github.com/blog/2104-working-with-submodules) or those found on [Git's website](https://git-scm.com/book/en/v2/Git-Tools-Submodules) for more information*
+*You can [read the GitHub documentation for submodules](https://github.com/blog/2104-working-with-submodules) or those
+found on [Git's website](https://git-scm.com/book/en/v2/Git-Tools-Submodules) for more information*
 
 ### Option C. Download ZIP and manual install
 
@@ -164,7 +168,8 @@ googleAnalytics = "" # Enable Google Analytics by entering your tracking id
   home = ["HTML", "RSS", "MANIFEST"] # Include MANIFEST format to home page
 ```
 
-*For more information about all available configuration settings read [Configure Hugo](https://gohugo.io/getting-started/configuration/)*
+*For more information about all available configuration settings read
+[Configure Hugo](https://gohugo.io/getting-started/configuration/)*
 
 ### Front Matter example
 
@@ -193,7 +198,8 @@ featured:
   previewOnly: false # show only preview image (true/false)
 ```
 
-*For more information about front matter variables read [Hugo Front Matter](https://gohugo.io/content-management/front-matter)*
+*For more information about front matter variables read
+[Hugo Front Matter](https://gohugo.io/content-management/front-matter)*
 
 ### Configuration options
 
@@ -207,7 +213,8 @@ Use `homeLayout` parameter in site config to configure home page layout.
 
 Use `listLayout` parameter in site config to configure list pages layout.
 
-Available values: `1 column`, `2 columns`, `3 columns`, `1 column + sidebar`, `2 columns + sidebar`, `3 columns + sidebar`, `1 column + left sidebar`, `2 columns + left sidebar`, `3 columns + left sidebar`
+Available values: `1 column`, `2 columns`, `3 columns`, `1 column + sidebar`, `2 columns + sidebar`,
+`3 columns + sidebar`, `1 column + left sidebar`, `2 columns + left sidebar`, `3 columns + left sidebar`
 
 ##### Single layouts
 
@@ -217,14 +224,16 @@ Available values: `content`, `content + sidebar`, `content + left sidebar`
 
 #### Custom CSS
 
-If you want to include custom CSS files, you need to assign an array of references in site config file (`config.toml` by default) like following:
+If you want to include custom CSS files, you need to assign an array of references in site config file (`config.toml` by
+default) like following:
 
 ```toml
 [Params]
   customCSS = ["css/custom.css"]
 ```
 
-Of course, you can reference as many CSS files as you want. Their paths need to be relative to the `static` folder of your Hugo site:
+Of course, you can reference as many CSS files as you want. Their paths need to be relative to the `static` folder of
+your Hugo site:
 
 ```toml
 [Params]
@@ -235,9 +244,11 @@ All these CSS files will be added through the `head.html` partial after the buil
 
 #### Footer Social Links
 
-With **Amnix**, you have the option to display links to your social media profiles in the footer. To display them, set up `[Params.Social]` parameters in your site config file.
+With **Amnix**, you have the option to display links to your social media profiles in the footer. To display them, set
+up `[Params.Social]` parameters in your site config file.
 
-Available social services: Email, Facebook, Twitter, Telegram, Instagram, Pinterest, VK, LinkedIn, GitHub, GitLab, Stack Overflow, Mastodon, Medium
+Available social services: Email, Facebook, Twitter, Telegram, Instagram, Pinterest, VK, LinkedIn, GitHub, GitLab, Stack
+Overflow, Mastodon, Medium
 
 #### Featured Image
 
@@ -324,4 +335,5 @@ See [CONTRIBUTING.md](https://github.com/vimux/amnix/blob/master/CONTRIBUTING.md
 **Amnix** is licensed under the [MIT License](https://github.com/vimux/amnix/blob/master/LICENSE).
 
 * Social media icons based on [SuperTinyIcons](https://github.com/edent/SuperTinyIcons) (MIT License)
-* CSS Reset based on [Bootstrap Reboot](https://github.com/twbs/bootstrap/blob/master/dist/css/bootstrap-reboot.css) (MIT License)
+* CSS Reset based on [Bootstrap Reboot](https://github.com/twbs/bootstrap/blob/master/dist/css/bootstrap-reboot.css)
+(MIT License)
