@@ -9,7 +9,6 @@ paginate = 10
   homeLayout = "2 columns + sidebar"
   listLayout = "2 columns + sidebar"
   singleLayout = "content + sidebar"
-  mainSections = ["post"]
 
 [Params.Widgets]
   recent = true
