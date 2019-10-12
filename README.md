@@ -105,6 +105,7 @@ googleAnalytics = "" # Enable Google Analytics by entering your tracking id
   mainSections = ["post"] # Set main page sections
   dateFormat = "January 02, 2006" # Change the format of dates
   customCSS = ["css/custom.css"] # Include custom CSS files
+  customJS = ["js/custom.js"] # Include custom JS files
   comments = true # Enable comments for all site pages
   related = true # Enable Related Content (See https://gohugo.io/content-management/related/)
   mathjax = true # Enable MathJax for all site pages
@@ -241,6 +242,26 @@ your Hugo site:
 ```
 
 All these CSS files will be added through the `head.html` partial after the built-in CSS file.
+
+#### Custom JS
+
+You can add custom JavaScript files by assigning an array of references in site config file (`config.toml` by default)
+like following:
+
+```toml
+[Params]
+  customJS = ["js/custom.js"]
+```
+
+And of course, just like with custom CSS, you can reference as many JS files as you want. Their paths need to be
+relative to the `static` folder of your Hugo site:
+
+```toml
+[Params]
+  customJS = ["js/custom.js", "js/another.js"]
+```
+
+All custom JS files will be added before closing body tag of a `baseof.html` file.
 
 #### Footer Social Links
 
