@@ -8,7 +8,7 @@
 
 **Features:**
 
-* Configurable main (home page), list and single layouts [`mainLayout`, `listLayout`, `singleLayout`]
+* Configurable home, list and single layouts
 * Featured image
 * Configurable main page content sections [`mainSections`]
 * Widgets
@@ -99,9 +99,8 @@ googleAnalytics = "" # Enable Google Analytics by entering your tracking id
   description = "Responsive and configurable Hugo theme" # Site description. Used in meta description
   opengraph = true # Enable OpenGraph
   twitterCards = true # Enable Twitter Cards
-  homeLayout = "2 columns + sidebar" # Configure home page layout
-  listLayout = "2 columns + sidebar" # Configure layout for list pages
-  singleLayout = "content + sidebar" # Configure layout for single pages
+  homeLayout = "2 columns" # Configure home page layout
+  listLayout = "2 columns" # Configure layout for list pages
   mainSections = ["post"] # Set main page sections
   dateFormat = "January 02, 2006" # Change the format of dates
   customCSS = ["css/custom.css"] # Include custom CSS files
@@ -114,6 +113,18 @@ googleAnalytics = "" # Enable Google Analytics by entering your tracking id
 
 [Params.Featured]
   previewOnly = false # Show only preview featured image
+
+[Params.Sidebar]
+  widgets = ["recent", "categories", "tags"] # Enable sidebar widgets in given order
+  position = "right" # Change sidebar position for all site pages: "right", "left" or false
+  positionHome = "right" # Change sidebar position for home page
+  positionList = "right" # Change sidebar position for list pages
+  positionSingle = "right" # Change sidebar position for single pages
+
+[Params.Widgets]
+  recentNum = 5 # Set number of articles in the "Recent articles" widget
+  recentDate = true # Show datetime in the "Recent Posts" widget
+  tagsCounter = true # Enable counter for each tag in the "Tags" widget
 
 [Params.Social] # Site Social block
   email = "example@example.com"
@@ -129,14 +140,6 @@ googleAnalytics = "" # Enable Google Analytics by entering your tracking id
   stackoverflow = "numberid"
   mastodon = "https://some.instance/@username"
   medium = "username"
-
-[Params.Widgets]
-  recent = true # Enable "Recent Posts" widget
-  recentNum = 5 # Set number of articles in the "Recent articles" widget
-  recentDate = true # Show datetime in the "Recent Posts" widget
-  categories = true # Enable "Categories" widget
-  tags = true # Enable "Tags" widget
-  tagsCounter = true # Enable counter for each tag in the "Tags" widget
 
 [Params.Share] # Post Share block
   facebook = true
@@ -187,7 +190,6 @@ tags:
   - "Another test"
 
 # Theme-Defined params
-singleLayout: "content + sidebar" # Change layout for specific single page
 comments: true # Enable/disable Disqus for specific page
 mathjax: true # Enable/disable MathJax for specific page
 related: true # Enable/disable Related content for specific page
@@ -197,6 +199,11 @@ featured:
   caption: Eiffel tower model # image caption
   credit: Unknown author # image credit
   previewOnly: false # show only preview image (true/false)
+sidebar:
+  position: left # Change sidebar position per page: "right", "left" or false
+  widgets:
+    - recent
+    - tags
 ```
 
 *For more information about front matter variables read
@@ -204,24 +211,69 @@ featured:
 
 ### Configuration options
 
-#### Layouts
+#### Sidebar
 
-**Amnix** comes with several layout options for home, list and single pages.
+The sidebar is an area to the side of a page that acts as a "container" for widgets. **Amnix** comes with a configurable
+sidebar that can be customized using parameters.
 
-##### Home & List layouts
+To create a sidebar block with widgets, use the `widgets` config key with a list of widget names as value under
+`[Params.sidebar]` section of the config file:
 
-Use `homeLayout` parameter in site config to configure home page layout.
+```toml
+[Params.sidebar]
+  widgets = ["recent", "categories", "tags"]
+```
 
-Use `listLayout` parameter in site config to configure list pages layout.
+Widgets can be also configured per page through front matter:
 
-Available values: `1 column`, `2 columns`, `3 columns`, `1 column + sidebar`, `2 columns + sidebar`,
-`3 columns + sidebar`, `1 column + left sidebar`, `2 columns + left sidebar`, `3 columns + left sidebar`
+```yaml
+sidebar:
+  widgets:
+    - recent
+    - tags
+```
 
-##### Single layouts
+Alternatively, you can use short notation in the front matter, if you don't need to change other properties of the
+sidebar:
 
-Use `singleLayout` parameter in site config to configure single pages layout.
+```yaml
+sidebar:
+  - recent
+  - tags
+```
 
-Available values: `content`, `content + sidebar`, `content + left sidebar`
+Please note that the sidebar is only displayed if there is at least one widget added to the sidebar.
+
+##### Sidebar position
+
+Sidebar position for all pages can be specified in the `position` param under `[Params.sidebar]` section of the config
+file. By default, `position` key equals `"right"` value, which means that the default sidebar position is on the right
+side, if this not specified in the site config. Position can be changed to display the sidebar on the left if required:
+
+```toml
+[Params.sidebar]
+  widgets = ["recent", "categories", "tags"]
+  position = "left"
+```
+
+Sidebar position can be specified for home, list and single pages individually. Use the keys `positionHome`,
+`positionList` and `positionSingle` with values `"left"`, `"right"` or `false` under `[Params.sidebar]` section of the
+configuration file:
+
+```toml
+[Params.sidebar]
+  positionHome = false
+  positionList = "left"
+  positionSingle = "right"
+```
+
+Sidebar position can be configured per page, by setting the `sidebar.position` parameter with one of the same values in
+the page's front matter:
+
+```yaml
+sidebar:
+  position: left
+```
 
 #### Custom CSS
 

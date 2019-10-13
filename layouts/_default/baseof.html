@@ -34,14 +34,15 @@
 <body>
 	{{ partial "header" . }}
 	<div class="wrapper wrapper--flex">
-	{{ block "main" . }}
-		{{- if or .Title .Content }}
-		<div class="page block">
-			{{ with .Title }}<h1 class="page__title">{{ . }}</h1>{{ end }}
-			{{ with .Content }}<div class="page__content{{ if not $.Title }} page__content--notitle{{ end }}">{{ . }}</div>{{ end }}
-		</div>
+		{{ block "main" . }}
+			{{- if or .Title .Content }}
+			<div class="page block">
+				{{ with .Title }}<h1 class="page__title">{{ . }}</h1>{{ end }}
+				{{ with .Content }}<div class="page__content{{ if not $.Title }} page__content--notitle{{ end }}">{{ . }}</div>{{ end }}
+			</div>
+			{{ end }}
 		{{ end }}
-	{{ end }}
+		{{ partial "sidebar.html" . }}
 	</div>
 	{{ partial "footer" . }}
 {{- if .Site.Menus.main }}
