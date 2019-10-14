@@ -1,4 +1,4 @@
-{{- if and (.Site.Params.widgets.tags) (isset .Site.Taxonomies "tags") }}
+{{- if isset .Site.Taxonomies "tags" }}
 {{- if not (eq (len .Site.Taxonomies.tags) 0) }}
 <div class="sidecard">
 	<div class="widget widget-tags block">

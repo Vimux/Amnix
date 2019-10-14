@@ -1,14 +1,30 @@
-{{ if or (and (eq .Kind "home") (in (.Param "homeLayout") "sidebar")) (and (eq .Kind "page") (in (.Param "singleLayout") "sidebar")) (and (ne .Kind (or "home" "page")) (in (.Param "listLayout") "sidebar")) }}
-<section class="sidebar
-	{{- if eq .Kind "home" -}}
-		{{ if in (.Param "homeLayout") "left" }} sidebar--left{{ end }}
-	{{- else if eq .Kind "page" }}
-		{{ if in (.Param "singleLayout") "left" }} sidebar--left{{ end }}
-	{{- else }}
-		{{ if in (.Param "listLayout") "left" }} sidebar--left{{ end }}
-	{{- end }} sidecards">
-	{{ partial "widgets/recent.html" . }}
-	{{ partial "widgets/categories.html" . }}
-	{{ partial "widgets/tags.html" . }}
-</section>
-{{ end }}
+{{- $page := . }}
+{{- $sidebarFront := .Params.sidebar }}
+{{- $sidebarPositionSite := .Site.Params.sidebar.position | default "right" }}
+{{- $sidebarPositionKind := "" }}
+{{- $sidebarPositionFront := "" }}
+
+{{- if reflect.IsMap $sidebarFront }}
+	{{ $sidebarPositionFront = $sidebarFront.position }}
+	{{ $sidebarFront = $sidebarFront.widgets }}
+{{- end }}
+
+{{- if eq $.Kind "page" }}
+	{{ $sidebarPositionKind = .Site.Params.sidebar.positionSingle }}
+{{- else if eq $.Kind "home" }}
+	{{ $sidebarPositionKind = .Site.Params.sidebar.positionHome }}
+{{- else }}
+	{{ $sidebarPositionKind = .Site.Params.sidebar.positionList }}
+{{- end }}
+
+{{- $sidebarPosition := default (default $sidebarPositionSite $sidebarPositionKind) $sidebarPositionFront }}
+{{- $widgetsList := default .Site.Params.sidebar.widgets $sidebarFront }}
+
+{{- if and $widgetsList $sidebarPosition -}}
+<aside class="sidebar{{ if eq $sidebarPosition "left" }} sidebar--left{{ end }} sidecards">
+	{{- range $widget := $widgetsList }}
+		{{- $widgetPath := printf "widgets/%s.html" $widget }}
+		{{- partial $widgetPath $page }}
+	{{- end }}
+</aside>
+{{- end }}

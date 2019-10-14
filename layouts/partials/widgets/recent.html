@@ -1,4 +1,4 @@
-{{- if and (.Site.Params.Widgets.recent) (where .Site.RegularPages "Section" "in" .Site.Params.mainSections) }}
+{{- if where .Site.RegularPages "Section" "in" .Site.Params.mainSections }}
 <div class="sidecard">
 	<div class="widget widget-recent block">
 		<h3 class="widget__title">{{ T "widget-recent_title" }}</h3>

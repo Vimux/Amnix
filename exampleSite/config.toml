@@ -6,16 +6,15 @@ paginate = 10
 
 [Params]
   description = "Responsive and configurable Hugo theme"
-  homeLayout = "2 columns + sidebar"
-  listLayout = "2 columns + sidebar"
-  singleLayout = "content + sidebar"
+  homeLayout = "2 columns"
+  listLayout = "2 columns"
+
+[Params.Sidebar]
+  widgets = ["recent", "categories", "tags"]
 
 [Params.Widgets]
-  recent = true
   recentNum = 5
   recentDate = true
-  categories = true
-  tags = true
 
 [Params.Share]
   facebook = true
