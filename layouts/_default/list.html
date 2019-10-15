@@ -8,7 +8,7 @@
 		{{ end }}
 		<section class="cards">
 			{{ range .Paginator.Pages }}
-			<div class="card{{ if and (in (.Param "listLayout") "col") }} card--{{ if in (.Param "listLayout") "3" }}3{{ else if in (.Param "listLayout") "2" }}2{{ end }}col{{ end }}">
+			<div class="card{{ if and (ge ($.Param "columns") 1) (le ($.Param "columns") 3) }} card--{{ $.Param "columns" }}col{{ end }}">
 				{{ .Render "summary" }}
 			</div>
 			{{ end }}

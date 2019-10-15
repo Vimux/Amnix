@@ -6,8 +6,7 @@ paginate = 10
 
 [Params]
   description = "Responsive and configurable Hugo theme"
-  homeLayout = "2 columns"
-  listLayout = "2 columns"
+  columns = 2
 
 [Params.Sidebar]
   widgets = ["recent", "categories", "tags"]

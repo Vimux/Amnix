@@ -99,8 +99,7 @@ googleAnalytics = "" # Enable Google Analytics by entering your tracking id
   description = "Responsive and configurable Hugo theme" # Site description. Used in meta description
   opengraph = true # Enable OpenGraph
   twitterCards = true # Enable Twitter Cards
-  homeLayout = "2 columns" # Configure home page layout
-  listLayout = "2 columns" # Configure layout for list pages
+  columns = 2 # Set the number of content cards columns. Possible values: 1, 2, 3
   mainSections = ["post"] # Set main page sections
   dateFormat = "January 02, 2006" # Change the format of dates
   customCSS = ["css/custom.css"] # Include custom CSS files
@@ -210,6 +209,24 @@ sidebar:
 [Hugo Front Matter](https://gohugo.io/content-management/front-matter)*
 
 ### Configuration options
+
+#### Columns
+
+Amnix ships with configurable column layout for home & list pages. To create multiple column layout change
+`Params.columns` key to preferable value (from 1 to 3):
+
+```toml
+[Params]
+  columns = 2
+```
+
+You can also change this option for specific list page in the front matter:
+
+```yaml
+columns: 2
+```
+
+Please note that the layout will display multiple columns only if it's possible by screen size.
 
 #### Sidebar
 
