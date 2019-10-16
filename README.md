@@ -14,6 +14,27 @@
 * Widgets
 * MathJax
 
+## Table of Contents
+
+- [Installation](#installation)
+  - [Option A. Git clone](#option-a-git-clone)
+  - [Option B. Git submodule](#option-b-git-submodule)
+  - [Option C. Download ZIP and manual install](#option-c-download-zip-and-manual-install)
+- [Configuration examples](#Configuration-examples)
+  - [Config.toml example](#configtoml-example)
+  - [Front Matter example](#front-matter-example)
+- [Configuration options](#configuration-options)
+  - [Columns](#columns)
+  - [Sidebar](#sidebar)
+    - [Sidebar position](#sidebar-position)
+  - [Custom CSS](#custom-css)
+  - [Custom JS](#custom-js)
+  - [Featured image](#featured-image)
+  - [Footer Social Links](#footer-social-links)
+  - [Web App Manifest](#web-app-manifest)
+- [Contributing](#contributing)
+- [License](#license)
+
 ## Installation
 
 *First of all, you will need to [install Hugo](https://gohugo.io/getting-started/quick-start/#step-1-install-hugo) and
@@ -82,7 +103,7 @@ Now you can go to [localhost:1313](http://localhost:1313) webpage and the Amnix 
 
 After you make sure that **Amnix** works, you may start customizing the theme if it's needed.
 
-## Configuration
+## Configuration examples
 
 ### Config.toml example
 
@@ -208,9 +229,9 @@ sidebar:
 *For more information about front matter variables read
 [Hugo Front Matter](https://gohugo.io/content-management/front-matter)*
 
-### Configuration options
+## Configuration options
 
-#### Columns
+### Columns
 
 Amnix ships with configurable column layout for home & list pages. To create multiple column layout change
 `Params.columns` key to preferable value (from 1 to 3):
@@ -228,7 +249,7 @@ columns: 2
 
 Please note that the layout will display multiple columns only if it's possible by screen size.
 
-#### Sidebar
+### Sidebar
 
 The sidebar is an area to the side of a page that acts as a "container" for widgets. **Amnix** comes with a configurable
 sidebar that can be customized using parameters.
@@ -261,7 +282,7 @@ sidebar:
 
 Please note that the sidebar is only displayed if there is at least one widget added to the sidebar.
 
-##### Sidebar position
+#### Sidebar position
 
 Sidebar position for all pages can be specified in the `position` param under `[Params.sidebar]` section of the config
 file. By default, `position` key equals `"right"` value, which means that the default sidebar position is on the right
@@ -292,7 +313,7 @@ sidebar:
   position: left
 ```
 
-#### Custom CSS
+### Custom CSS
 
 If you want to include custom CSS files, you need to assign an array of references in site config file (`config.toml` by
 default) like following:
@@ -312,7 +333,7 @@ your Hugo site:
 
 All these CSS files will be added through the `head.html` partial after the built-in CSS file.
 
-#### Custom JS
+### Custom JS
 
 You can add custom JavaScript files by assigning an array of references in site config file (`config.toml` by default)
 like following:
@@ -332,15 +353,7 @@ relative to the `static` folder of your Hugo site:
 
 All custom JS files will be added before closing body tag of a `baseof.html` file.
 
-#### Footer Social Links
-
-With **Amnix**, you have the option to display links to your social media profiles in the footer. To display them, set
-up `[Params.Social]` parameters in your site config file.
-
-Available social services: Email, Facebook, Twitter, Telegram, Instagram, Pinterest, VK, LinkedIn, GitHub, GitLab, Stack
-Overflow, Mastodon, Medium
-
-#### Featured Image
+### Featured Image
 
 There are two main different ways to add a featured image for a page.
 
@@ -368,7 +381,15 @@ featured:
 
 **Note**: `caption` and `credit` appear only on single pages, not summaries.
 
-#### Web App Manifest
+### Footer Social Links
+
+With **Amnix**, you have the option to display links to your social media profiles in the footer. To display them, set
+up `[Params.Social]` parameters in your site config file.
+
+Available social services: Email, Facebook, Twitter, Telegram, Instagram, Pinterest, VK, LinkedIn, GitHub, GitLab, Stack
+Overflow, Mastodon, Medium
+
+### Web App Manifest
 
 [Web App Manifest](https://developers.google.com/web/fundamentals/web-app-manifest/) is a simple json file with basic
 site info like name, description, icons, etc. This file tells the browser about your web application and how it should
