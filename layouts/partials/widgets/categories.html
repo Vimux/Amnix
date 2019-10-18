@@ -1,16 +1,19 @@
-{{- if isset .Site.Taxonomies "categories" }}
-{{- if not (eq (len .Site.Taxonomies.categories) 0) }}
+{{- $categories := .Site.Taxonomies.categories }}
+{{- if gt (len $categories) 0 }}
 <div class="sidecard">
 	<div class="widget widget-categories block">
 		<h3 class="widget__title">{{ T "widget-categories_title" }}</h3>
 		<div class="widget__content">
 			<ul class="widget__list">
-				{{- range $name, $items := .Site.Taxonomies.categories }}
-				<li class="widget__item"><a class="widget__link" href="{{ "categories/" | relLangURL }}{{ $name | urlize | lower }}">{{ $name | title | humanize }}</a></li>
+			{{- range $name, $taxonomy := $categories }}
+				{{- with $.Site.GetPage (printf "/categories/%s" $name) }}
+				<li class="widget__item">
+					<a class="widget__link" href="{{ .RelPermalink }}">{{ .Title }}</a>
+				</li>
 				{{- end }}
+			{{- end }}
 			</ul>
 		</div>
 	</div>
 </div>
-{{- end }}
 {{- end }}
