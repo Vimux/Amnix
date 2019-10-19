@@ -1,15 +1,22 @@
-{{- if where .Site.RegularPages "Section" "in" .Site.Params.mainSections }}
+{{ $recent := where .Site.RegularPages "Type" "in" .Site.Params.mainSections }}
+{{- if $recent }}
 <div class="sidecard">
 	<div class="widget widget-recent block">
 		<h3 class="widget__title">{{ T "widget-recent_title" }}</h3>
 		<div class="widget__content">
 			<ul class="widget__list">
-			{{- $recentNum := (.Site.Params.widgets.recentNum | default 5) }}
-			{{- range first $recentNum (where .Site.RegularPages "Section" "in" .Site.Params.mainSections) }}
+			{{- $recentNum := .Site.Params.widgets.recentNum | default 5 }}
+			{{- range first $recentNum $recent }}
 				{{- if .Title }}
 				<li class="widget__item">
 					<a class="widget__link" href="{{ .RelPermalink }}">{{ .Title }}</a>
-					{{ if .Site.Params.Widgets.recentDate -}}<div class="widget__meta"><time class="widget__datetime">{{ .Date.Format ( .Site.Params.dateFormat | default "January 02, 2006" ) }}</time></div>{{ end }}
+					{{- if .Site.Params.Widgets.recentDate }}
+					<div class="widget__meta">
+						<time class="widget__datetime">
+							{{- .Date.Format (.Site.Params.dateFormat | default "January 02, 2006") -}}
+						</time>
+					</div>
+					{{- end }}
 				</li>
 				{{- end }}
 			{{- end }}
