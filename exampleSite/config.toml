@@ -12,7 +12,6 @@ paginate = 10
   widgets = ["recent", "categories", "tags"]
 
 [Params.Widgets]
-  recentNum = 5
   recentDate = true
 
 [Params.Share]
