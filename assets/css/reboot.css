@@ -1,7 +1,7 @@
-{{- /*
+/*
  * Based on Bootstrap Reboot v4.3.1 (https://github.com/twbs/bootstrap/blob/1770691b339b/dist/css/bootstrap-reboot.css)
  * Licensed under MIT
-*/ -}}
+*/
 *,
 *::before,
 *::after {
@@ -77,9 +77,7 @@ p {
 }
 
 abbr {
-	text-decoration: underline;
-	-webkit-text-decoration: underline dotted;
-	text-decoration: underline dotted;
+	text-decoration: none;
 	cursor: help;
 	-webkit-text-decoration-skip-ink: none;
 	text-decoration-skip-ink: none;
