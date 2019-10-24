@@ -30,23 +30,8 @@ blockquote footer {
 
 pre {
 	padding: 1rem;
-	margin-top: 0;
-	margin-bottom: 1rem;
-	overflow: auto;
 	color: #eee;
 	background-color: #222;
-}
-
-code {
-	color: #c33;
-}
-
-pre code {
-	padding: 0;
-	color: inherit;
-	white-space: inherit;
-	background: inherit;
-	border: 0;
 }
 
 dfn {
@@ -330,7 +315,7 @@ th {
 }
 
 .post__featured {
-	min-height: 1px; /* Workaround for IE11 flexbox img height issue https://github.com/philipwalton/flexbugs/issues/75 */
+	min-height: 1px; /* Workaround for IE11 flexbox img height bug https://github.com/philipwalton/flexbugs/issues/75 */
 	margin: -1rem -1rem 1rem;
 }
 
