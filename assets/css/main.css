@@ -28,6 +28,10 @@ blockquote {
 	border: 1px solid rgba(0, 0, 0, 0.08);
 }
 
+blockquote p:last-child {
+	margin-bottom: 0;
+}
+
 blockquote footer {
 	text-align: right;
 }
