@@ -25,7 +25,7 @@ abbr {
 blockquote {
 	padding: 1rem;
 	background: #fff9dd;
-	border: 1px solid rgba(0, 0, 0, 0.08);
+	border: 1px solid rgba(0, 0, 0, .08);
 }
 
 blockquote p:last-child {
