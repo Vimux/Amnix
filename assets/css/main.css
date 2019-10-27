@@ -6,6 +6,8 @@ body {
 	display: flex;
 	flex-direction: column;
 	height: 100%;
+	word-wrap: break-word;
+	overflow-wrap: break-word;
 	background-color: #f7f7f7;
 	-webkit-font-smoothing: antialiased;
 }
