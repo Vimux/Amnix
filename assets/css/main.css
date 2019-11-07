@@ -239,7 +239,7 @@ th {
 	}
 
 	.main-nav__list.main-nav__list--active {
-		position: initial;
+		position: inherit;
 		border: 0;
 	}
 }
