@@ -99,6 +99,12 @@ th {
 	background-color: #33333a;
 }
 
+.js .header__inner {
+	display: flex;
+	align-items: center;
+	padding: .6875rem .875rem .6875rem 1.375rem;
+}
+
 .logo {
 	font-weight: 600;
 	color: #fff;
@@ -109,16 +115,14 @@ th {
 	text-decoration: none;
 }
 
-.main-menu {
+.main-nav {
 	display: block;
+	margin-left: auto;
 	font-size: 0;
 	font-weight: 700;
 }
 
 .main-nav__btn {
-	position: absolute;
-	top: .625rem;
-	right: 1rem;
 	padding: .5rem;
 	font-size: 0;
 	cursor: pointer;
@@ -211,6 +215,11 @@ th {
 }
 
 @media (min-width: 860px) {
+	.js .header__inner {
+		display: block;
+		padding: 1rem 1.375rem;
+	}
+
 	.logo {
 		display: inline-block;
 	}
