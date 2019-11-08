@@ -116,32 +116,16 @@ th {
 }
 
 .main-nav {
-	display: block;
 	margin-left: auto;
 	font-size: 0;
-	font-weight: 700;
 }
 
 .main-nav__btn {
 	padding: .5rem;
-	font-size: 0;
 	cursor: pointer;
 	background-color: #33333a;
 	border: 0;
 	fill: #9f9fab;
-}
-
-.main-nav__btn:focus,
-.main-nav__btn:hover {
-	color: #000;
-}
-
-.main-nav__btn-icon {
-	font-size: 1rem;
-}
-
-.main-nav__btn .icon-menu__burger {
-	display: inline;
 }
 
 .main-nav__btn .icon-menu__x {
@@ -157,7 +141,10 @@ th {
 }
 
 .main-nav__list {
+	padding: 0;
+	margin: 0;
 	font-size: 0;
+	list-style: none;
 }
 
 .no-js .main-nav__list {
@@ -195,12 +182,6 @@ th {
 
 .main-nav__link:hover {
 	color: #fff;
-}
-
-.main-nav__list {
-	padding: 0;
-	margin: 0;
-	list-style: none;
 }
 
 .no-js .main-nav__btn {
