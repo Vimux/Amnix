@@ -160,12 +160,20 @@ th {
 	font-size: 0;
 }
 
+.no-js .main-nav__list {
+	margin-top: 1rem;
+}
+
 .main-nav__item {
-	padding: .5rem 1.375rem;
+	padding: .5rem 0;
 	font-size: 1rem;
 	font-weight: 600;
 	color: #bbb;
 	border-bottom: 1px solid #5b5b67;
+}
+
+.js .main-nav__item {
+	padding: .5rem 1.375rem;
 }
 
 .main-nav__item:first-child {
@@ -224,8 +232,14 @@ th {
 		display: inline-block;
 	}
 
-	.js .main-nav__list {
+	.js .main-nav {
+		margin-left: auto;
+	}
+
+	.js .main-nav__list,
+	.no-js .main-nav__list {
 		display: block;
+		margin-top: 0;
 	}
 
 	.main-nav__btn {
@@ -236,6 +250,7 @@ th {
 		display: inline-block;
 	}
 
+	.js .main-nav__item,
 	.main-nav__item {
 		display: inline-block;
 		padding: 0 .5rem;
