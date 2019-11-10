@@ -9,7 +9,7 @@
 	<ul id="menu" class="main-nav__list">
 		{{- $currentNode := . }}
 		{{- range sort .Site.Menus.main }}
-			{{- $current := ($currentNode.IsMenuCurrent "main" .) ($currentNode.HasMenuCurrent "main" .) }}
+			{{- $current := (or ($currentNode.IsMenuCurrent "main" .) ($currentNode.HasMenuCurrent "main" .)) }}
 			{{- if .Name }}
 				<li class="main-nav__item{{ if $current }} main-nav__item--active{{ end }}">
 					{{ if not $current }}<a class="main-nav__link" href="{{ .URL }}">{{ end }}
