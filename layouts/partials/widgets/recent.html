@@ -12,7 +12,7 @@
 					<a class="widget__link" href="{{ .RelPermalink }}">{{ .Title }}</a>
 					{{- if .Site.Params.Widgets.recentDate }}
 					<div class="widget__meta">
-						<time class="widget__datetime">
+						<time class="widget__datetime" datetime="{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}">
 							{{- .Date.Format (.Site.Params.dateFormat | default "January 02, 2006") -}}
 						</time>
 					</div>
