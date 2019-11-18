@@ -30,6 +30,7 @@
   - [Custom CSS](#custom-css)
   - [Custom JS](#custom-js)
   - [Featured image](#featured-image)
+  - [Meta Fields](#meta-fields)
   - [Footer Social Links](#footer-social-links)
   - [Web App Manifest](#web-app-manifest)
 - [Contributing](#contributing)
@@ -380,6 +381,28 @@ featured:
 ```
 
 **Note**: `caption` and `credit` appear only on single pages, not summaries.
+
+### Meta Fields
+
+Meta fields are page meta information such as publish date, last modification date, reading time, categories, and even
+more. Amnix comes with only one meta field to show post date/time, but you can always create your custom meta field.
+
+You can enable meta fields globally or per page.
+
+To activate meta fields globally you should use the `meta` config key with a list of meta field names as a value under
+`[Params.Post]` section of the config file:
+
+```toml
+[Params.Post]
+  meta = ["date"]
+```
+
+Or meta fields can be activated per page through front matter:
+
+```yml
+meta:
+  - date
+```
 
 ### Footer Social Links
 

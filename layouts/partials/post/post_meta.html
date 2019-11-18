@@ -1,0 +1,11 @@
+{{- $page := . -}}
+{{- $pageMeta := default .Site.Params.Post.meta .Params.meta -}}
+
+{{- with $pageMeta }}
+	<div class="post__meta meta">
+		{{- range . }}
+			{{- $metaFieldPath := printf "post/meta/%s.html" . -}}
+			{{- partial $metaFieldPath $page -}}
+		{{- end }}
+	</div>
+{{- end }}
