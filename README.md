@@ -220,6 +220,8 @@ featured:
   caption: Eiffel tower model # image caption
   credit: Unknown author # image credit
   previewOnly: false # show only preview image (true/false)
+meta:
+  - date
 sidebar:
   position: left # Change sidebar position per page: "right", "left" or false
   widgets:
