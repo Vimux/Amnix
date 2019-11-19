@@ -8,6 +8,9 @@ paginate = 10
   description = "Responsive and configurable Hugo theme"
   columns = 2
 
+[Params.Post]
+  meta = ["date"]
+
 [Params.Sidebar]
   widgets = ["recent", "categories", "tags"]
 
