@@ -16,6 +16,9 @@
 - id: widget-tags_title
   translation: Tags
 
+- id: widget-sidemenu_title
+  translation: Menu
+
 # Share
 - id: share-caption
   translation: Share on

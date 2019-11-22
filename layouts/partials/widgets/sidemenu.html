@@ -1,0 +1,16 @@
+{{- with .Site.Menus.side }}
+<div class="sidecard">
+	<div class="widget-sidemenu widget block">
+		<h4 class="widget__title">{{ T "widget-sidemenu_title" }}</h4>
+		<nav class="widget__content">
+			<ul class="widget__list">
+				{{- range . }}
+				<li class="widget__item">
+					<a class="widget__link" href="{{ .URL }}">{{ .Name }}</a>
+				</li>
+				{{- end }}
+			</ul>
+		</nav>
+	</div>
+</div>
+{{- end }}
