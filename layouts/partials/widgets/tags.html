@@ -2,15 +2,22 @@
 {{- if gt (len $tags) 0 }}
 <div class="sidecard">
 	<div class="widget widget-tags block">
-		<h3 class="widget__title">{{ T "widget-tags_title" }}</h3>
+		<h3 class="widget-tags__title widget__title">{{ T "widget-tags_title" }}</h3>
 		<div class="widget-tags__content widget__content">
-		{{- range $name, $taxonomy := $tags }}
-			{{- with $.Site.GetPage (printf "/tags/%s" $name) }}
-			<a class="widget-tags__link widget__link transition" href="{{ .RelPermalink }}" title="{{ .Title }}">
-				{{- .Title -}}{{- if $.Site.Params.widgets.tagsCounter }} ({{ $taxonomy.Count }}){{ end -}}
-			</a>
+			<ul class="widget-tags__list widget__list">
+			{{- range $name, $taxonomy := $tags }}
+				{{- with $.Site.GetPage (printf "/tags/%s" $name) }}
+				<li class="widget-tags__item widget__item">
+					<a class="widget-tags__link widget__link transition" href="{{ .RelPermalink }}">
+						{{- .Title -}}
+						{{ if $.Site.Params.widgets.tagsCounter -}}
+							&nbsp;<span class="widget-tags__counter widget__counter">({{ $taxonomy.Count }})</span>
+						{{- end -}}
+					</a>
+				</li>
+				{{- end }}
 			{{- end }}
-		{{- end }}
+			</ul>
 		</div>
 	</div>
 </div>
