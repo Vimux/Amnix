@@ -31,6 +31,7 @@
   - [Custom JS](#custom-js)
   - [Featured image](#featured-image)
   - [Meta Fields](#meta-fields)
+  - [Menus](#menus)
   - [Footer Social Links](#footer-social-links)
   - [Web App Manifest](#web-app-manifest)
 - [Contributing](#contributing)
@@ -405,6 +406,29 @@ Or meta fields can be activated per page through front matter:
 meta:
   - date
 ```
+
+### Menus
+
+**Amnix** supports main and side menus. The `main` menu is fully responsive and displayed in the site header. The `side`
+secondary menu is displayed in a sidebar widget. To add a page to a menu, add a `menu: <menu>` parameter to the page's
+front matter:
+
+```yaml
+menu: main # Add page to a main menu
+```
+
+You can also add a page to multiple menus by providing a list:
+
+```yaml
+menu: ["main", "side"] # Add page to main and side menus
+```
+
+**Note:** Don't forget to enable the `sidemenu` widget in the `widgets` configuration param if you want to use the
+`side` menu.
+
+**Note:** Please keep in mind that Amnix menus don't support nested items i.e. submenus.
+
+*For more information, see [Menus](https://gohugo.io/content-management/menus/) in the Hugo documentation.*
 
 ### Footer Social Links
 
