@@ -133,6 +133,9 @@ googleAnalytics = "" # Enable Google Analytics by entering your tracking id
   mathjaxPath = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/MathJax.js" # Specify MathJax path. Optional
   mathjaxConfig = "TeX-AMS-MML_HTMLorMML" # Specify MathJax config. Optional
 
+[Params.Post]
+  meta = ["date"] # Enable post meta fields in given order
+
 [Params.Featured]
   previewOnly = false # Show only preview featured image
 
