@@ -30,6 +30,7 @@
   - [Custom CSS](#custom-css)
   - [Custom JS](#custom-js)
   - [Featured image](#featured-image)
+  - [Breadcrumb](#breadcrumb)
   - [Meta Fields](#meta-fields)
   - [Menus](#menus)
   - [Footer Social Links](#footer-social-links)
@@ -136,6 +137,10 @@ googleAnalytics = "" # Enable Google Analytics by entering your tracking id
 [Params.Post]
   meta = ["date"] # Enable post meta fields in given order
 
+[Params.Breadcrumb]
+  enable = true # Enable breadcrumb globally
+  homeText = "Amnix" # Home node text
+
 [Params.Featured]
   previewOnly = false # Show only preview featured image
 
@@ -215,6 +220,7 @@ tags:
   - "Another test"
 
 # Theme-Defined params
+breadcrumb: true # Enable/disable Breadcrumb navigation for specific page
 comments: true # Enable/disable Disqus for specific page
 mathjax: true # Enable/disable MathJax for specific page
 related: true # Enable/disable Related content for specific page
@@ -387,6 +393,25 @@ featured:
 ```
 
 **Note**: `caption` and `credit` appear only on single pages, not summaries.
+
+### Breadcrumb
+
+Breadcrumb navigation is a hierarchical navigation menu presented as a trail of links.
+
+For enabling breadcrumb partial globally (for all single and list pages), use `enable` param under the
+`[Params.Breadcrumb]` section of your config file:
+
+```toml
+[Params.Breadcrumb]
+  enable = true
+```
+
+The global `.Site.Params.Breadcrumb.enable` param can be overridden for specific page with `breadcrumb` front matter
+param:
+
+```yaml
+breadcrumb: false
+```
 
 ### Meta Fields
 

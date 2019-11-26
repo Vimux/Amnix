@@ -1,5 +1,6 @@
 {{ define "main" }}
 	<div class="content">
+		{{ partial "breadcrumb.html" . }}
 		{{ if or .Title .Content }}
 		<section class="taxonomy">
 			{{ with .Title }}<h1 class="taxonomy__title">{{ . }}</h1>{{ end }}

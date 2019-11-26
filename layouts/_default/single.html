@@ -1,20 +1,23 @@
 {{ define "main" }}
 	<section class="single">
-		<article class="post block">
-			{{- partial "post/post_featured.html" (dict "page" . "IsSingle" true) }}
-			<header class="post__header">
-				<h1 class="post__title">{{ .Title }}</h1>
-				{{ partial "post/post_meta.html" . }}
-			</header>
-			<div class="post__content">{{ .Content }}</div>
-			{{ if or (.Param "share") (isset $.Params "tags") }}
-			<footer class="post__footer">
-				{{ partial "post/post_tags.html" . }}
-				{{ partial "post/post_share.html" . }}
-			</footer>
-			{{ end }}
-		</article>
-		{{ partial "related.html" . }}
-		{{ partial "comments.html" . }}
+		{{ partial "breadcrumb.html" . }}
+		<div class="postbox">
+			<article class="post block">
+				{{- partial "post/post_featured.html" (dict "page" . "IsSingle" true) }}
+				<header class="post__header">
+					<h1 class="post__title">{{ .Title }}</h1>
+					{{ partial "post/post_meta.html" . }}
+				</header>
+				<div class="post__content">{{ .Content }}</div>
+				{{ if or (.Param "share") (isset $.Params "tags") }}
+				<footer class="post__footer">
+					{{ partial "post/post_tags.html" . }}
+					{{ partial "post/post_share.html" . }}
+				</footer>
+				{{ end }}
+			</article>
+			{{ partial "related.html" . }}
+			{{ partial "comments.html" . }}
+		</div>
 	</section>
 {{ end }}
