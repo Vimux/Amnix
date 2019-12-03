@@ -1,28 +1,30 @@
 {{- $pag := $.Paginator }}
 {{- if gt $pag.TotalPages 1 }}
 <section class="pagination block">
-{{- $ellipsed := false }}
-{{- $shouldEllipse := false }}
-{{- range $pag.Pagers }}
-	{{- $right := sub .TotalPages .PageNumber }}
-	{{- $showNumber := or (le .PageNumber 3) (eq $right 0) }}
-	{{- $showNumber := or $showNumber (and (gt .PageNumber (sub $pag.PageNumber 2)) (lt .PageNumber (add $pag.PageNumber 2))) }}
-	{{- if $showNumber }}
-		{{- $ellipsed = false }}
-		{{- $shouldEllipse = false }}
-	{{ else }}
-		{{- $shouldEllipse = not $ellipsed }}
-		{{- $ellipsed = true }}
-	{{- end }}
-	{{- if $showNumber }}
-		{{- if eq . $pag }}
-			<span class="pagination__item pagination__item--active" data-total="{{ $pag.TotalPages }}">{{ .PageNumber }}</span>
-		{{ else }}
-			<a class="pagination__item" href="{{ .URL }}">{{ .PageNumber }}</a>
+	{{- $ellipsed := false }}
+	{{- $shouldEllipse := false }}
+	{{- range $pag.Pagers }}
+		{{- $right := sub .TotalPages .PageNumber }}
+		{{- $showNumber := or (le .PageNumber 3) (eq $right 0) }}
+		{{- $showNumber := or $showNumber (and (gt .PageNumber (sub $pag.PageNumber 2)) (lt .PageNumber (add $pag.PageNumber 2))) }}
+		{{- if $showNumber }}
+			{{- $ellipsed = false }}
+			{{- $shouldEllipse = false }}
+		{{- else }}
+			{{- $shouldEllipse = not $ellipsed }}
+			{{- $ellipsed = true }}
 		{{- end }}
-	{{ else if $shouldEllipse }}
-		<span class="pagination__item pagination__item--gap">&hellip;</span>
+		{{- if $showNumber }}
+			{{- if eq . $pag }}
+				<span class="pagination__item pagination__item--active" data-total="{{ $pag.TotalPages }}">
+					{{- .PageNumber -}}
+				</span>
+			{{- else }}
+				<a class="pagination__item" href="{{ .URL }}">{{ .PageNumber }}</a>
+			{{- end }}
+		{{- else if $shouldEllipse }}
+			<span class="pagination__item pagination__item--gap">&hellip;</span>
+		{{- end }}
 	{{- end }}
-{{- end }}
 </section>
 {{- end }}
