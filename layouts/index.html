@@ -10,7 +10,7 @@
 			</div>
 			{{- end }}
 		</section>
-		{{ partial "pagination.html" . }}
+		{{ partial "pagination.html" (dict "page" . "class" "block") }}
 	</div>
 	{{- else }}
 	<div class="single">

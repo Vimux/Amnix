@@ -1,6 +1,6 @@
-{{- $pag := $.Paginator }}
+{{- $pag := .page.Paginator }}
 {{- if gt $pag.TotalPages 1 }}
-<section class="pagination block">
+<section class="pagination {{ .class | default "block" }}">
 	{{- $ellipsed := false }}
 	{{- $shouldEllipse := false }}
 	{{- range $pag.Pagers }}
