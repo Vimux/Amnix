@@ -122,6 +122,7 @@ googleAnalytics = "" # Enable Google Analytics by entering your tracking id
 [Params]
   description = "Responsive and configurable Hugo theme" # Site description. Used in meta description
   copyright = "Amnix" # Footer copyright holder, otherwise will use .Site.Title
+  copyrightStartYear = 2019 # Footer copyright start year
   opengraph = true # Enable OpenGraph
   twitterCards = true # Enable Twitter Cards
   columns = 2 # Set the number of content cards columns. Possible values: 1, 2, 3

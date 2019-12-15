@@ -1,6 +1,10 @@
 <footer class="footer">
 	<div class="footer__inner inner">
-		<div class="footer__copyright">© {{ now.Format "2006" }} {{ .Site.Params.copyright | default .Site.Title }}. <span class="footer__copyright-credits">{{ T "footer_credits" | safeHTML }}</span></div>
+		<div class="footer__copyright">©&nbsp;
+			{{- with .Site.Params.copyrightStartYear }}{{ . }}&ndash;{{ end -}}
+			{{ now.Format "2006" }} {{ .Site.Params.copyright | default .Site.Title }}.
+			<span class="footer__copyright-credits">{{ T "footer_credits" | safeHTML }}</span>
+		</div>
 		{{- partial "footer_social.html" . }}
 	</div>
 </footer>
