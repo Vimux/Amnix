@@ -138,6 +138,7 @@ googleAnalytics = "" # Enable Google Analytics by entering your tracking id
 
 [Params.Post]
   meta = ["date"] # Enable post meta fields in given order
+  share = ["facebook", "twitter", "reddit", "telegram", "linkedin", "vk", "pocket"] # Enable share buttons
 
 [Params.Breadcrumb]
   enable = true # Enable breadcrumb globally
@@ -172,15 +173,6 @@ googleAnalytics = "" # Enable Google Analytics by entering your tracking id
   stackoverflow = "numberid"
   mastodon = "https://some.instance/@username"
   medium = "username"
-
-[Params.Share] # Post Share block
-  facebook = true
-  twitter = true
-  reddit = true
-  telegram = true
-  linkedin = true
-  vk = true
-  pocket = true
 
 [Params.Manifest] # Web App Manifest config
   name = "Amnix"
@@ -234,6 +226,9 @@ featured:
   previewOnly: false # show only preview image (true/false)
 meta:
   - date
+share:
+  - facebook
+  - twitter
 sidebar:
   position: left # Change sidebar position per page: "right", "left" or false
   widgets:

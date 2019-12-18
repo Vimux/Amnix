@@ -23,9 +23,6 @@
 - id: share-caption
   translation: Share on
 
-- id: save-caption
-  translation: Save on
-
 # Footer
 - id: footer_credits
   translation: "Powered by <a href=\"https://gohugo.io/\" rel=\"nofollow noopener\" target=\"_blank\">Hugo</a> and <a href=\"https://github.com/vimux/amnix\" rel=\"nofollow noopener\" target=\"_blank\">Amnix</a> theme."

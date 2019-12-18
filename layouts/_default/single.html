@@ -9,7 +9,7 @@
 					{{ partial "post/post_meta.html" . }}
 				</header>
 				<div class="post__content">{{ .Content }}</div>
-				{{ if or (.Param "share") (isset $.Params "tags") }}
+				{{ if or (isset $.Params "tags") (default .Site.Params.Post.share .Params.share) }}
 				<footer class="post__footer">
 					{{ partial "post/post_tags.html" . }}
 					{{ partial "post/post_share.html" . }}

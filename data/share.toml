@@ -1,0 +1,40 @@
+[[items]]
+  id = "facebook"
+  title = "Facebook"
+  url = "https://www.facebook.com/sharer/sharer.php?u={{ .Permalink }}"
+  icon = "svg/facebook.svg"
+
+[[items]]
+  id = "twitter"
+  title = "Twitter"
+  url = "https://twitter.com/intent/tweet/?url={{ .Permalink }}&amp;text={{ .Title }}"
+  icon = "svg/twitter.svg"
+
+[[items]]
+  id = "reddit"
+  title = "Reddit"
+  url = "https://www.reddit.com/submit?url={{ .Permalink }}&amp;title={{ .Title }}"
+  icon = "svg/reddit.svg"
+
+[[items]]
+  id = "telegram"
+  title = "Telegram"
+  url = "https://t.me/share/url?url={{ .Permalink }}&amp;title={{ .Title }}"
+  icon = "svg/telegram.svg"
+
+[[items]]
+  id = "linkedin"
+  title = "LinkedIn"
+  icon = "svg/linkedin.svg"
+
+[[items]]
+  id = "vk"
+  title = "VK"
+  url = "https://vk.com/share.php?url={{ .Permalink }}"
+  icon = "svg/vk.svg"
+
+[[items]]
+  id = "pocket"
+  title = "Pocket"
+  url = "https://getpocket.com/edit?url={{ .Permalink }}&amp;title={{ .Title }}"
+  icon = "svg/pocket.svg"

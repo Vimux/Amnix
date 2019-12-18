@@ -10,14 +10,10 @@ paginate = 10
 
 [Params.Post]
   meta = ["date"]
+  share = ["facebook", "twitter", "reddit"]
 
 [Params.Sidebar]
   widgets = ["recent", "categories", "tags"]
 
 [Params.Widgets]
   recentDate = true
-
-[Params.Share]
-  facebook = true
-  twitter = true
-  reddit = true
