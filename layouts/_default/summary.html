@@ -1,7 +1,9 @@
 <article class="post block">
 	{{- partial "post/post_featured.html" (dict "page" . "link" .RelPermalink) }}
 	<header class="post__header">
-		<h1 class="post__title post__title--summary"><a class="post__title-link" href="{{ .RelPermalink }}">{{ .Title }}</a></h1>
+		<h1 class="post__title post__title--summary">
+			<a class="post__title-link" href="{{ .RelPermalink }}">{{ .Title }}</a>
+		</h1>
 		{{ partial "post/post_meta.html" . }}
 	</header>
 	{{- with .Summary }}

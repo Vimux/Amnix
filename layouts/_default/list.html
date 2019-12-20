@@ -4,7 +4,11 @@
 		{{ if or .Title .Content }}
 		<section class="taxonomy">
 			{{ with .Title }}<h1 class="taxonomy__title">{{ . }}</h1>{{ end }}
-			{{ with .Content }}<div class="taxonomy__content{{ if not $.Title }} taxonomy__content--notitle{{ end }}">{{ . }}</div>{{ end }}
+			{{ with .Content }}
+				<div class="taxonomy__content{{ if not $.Title }} taxonomy__content--notitle{{ end }}">
+					{{ . }}
+				</div>
+			{{ end }}
 		</section>
 		{{ end }}
 		<section class="cards">
