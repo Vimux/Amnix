@@ -524,11 +524,7 @@ th {
 }
 
 .taxonomy {
-	padding: 1rem;
 	margin: .25rem;
-	background-color: #fff;
-	border: 1px solid #cfcfcf;
-	border-radius: 2px;
 }
 
 .taxonomy__title {

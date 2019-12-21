@@ -2,7 +2,7 @@
 	<div class="content">
 		{{ partial "breadcrumb.html" . }}
 		{{ if or .Title .Content }}
-		<section class="taxonomy">
+		<section class="taxonomy block">
 			{{ with .Title }}<h1 class="taxonomy__title">{{ . }}</h1>{{ end }}
 			{{ with .Content }}
 				<div class="taxonomy__content{{ if not $.Title }} taxonomy__content--notitle{{ end }}">
