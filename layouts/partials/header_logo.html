@@ -1,1 +1,1 @@
-<a class="logo" href="{{ "" | relURL }}">{{ .Site.Title }}</a>
+<a class="logo" href="{{ "" | relURL }}">{{ .Site.Params.logoText | default .Site.Title }}</a>

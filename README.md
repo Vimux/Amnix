@@ -120,6 +120,7 @@ disqusShortname = "" # Enable comments by entering your Disqus shortname
 googleAnalytics = "" # Enable Google Analytics by entering your tracking id
 
 [Params]
+  logoText = "Amnix" # Logo text, otherwise will use .Site.Title
   description = "Responsive and configurable Hugo theme" # Site description. Used in meta description
   copyright = "Amnix" # Footer copyright holder, otherwise will use .Site.Title
   copyrightStartYear = 2019 # Footer copyright start year
