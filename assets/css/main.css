@@ -284,7 +284,7 @@ th {
 	min-width: 0;
 }
 
-.postbox {
+.entrybox {
 	display: flex;
 	flex-basis: auto;
 	flex-shrink: 0;
@@ -293,7 +293,7 @@ th {
 	order: 1;
 }
 
-.post {
+.entry {
 	display: flex;
 	flex: 1 0 0%;
 	flex-direction: column;
@@ -369,7 +369,7 @@ th {
 	content: "›";
 }
 
-.post__featured {
+.entry__featured {
 	min-height: 1px; /* Workaround for IE11 flexbox img height bug https://github.com/philipwalton/flexbugs/issues/75 */
 	margin: -1rem -1rem 1rem;
 }
@@ -396,21 +396,21 @@ th {
 	color: #707070;
 }
 
-.post__title {
+.entry__title {
 	margin-top: 0;
 	margin-bottom: 0;
 	font-size: 1.75rem;
 }
 
-.post__title--summary {
+.entry__title--summary {
 	font-size: 1.125rem;
 }
 
-.post__title-link {
+.entry__title-link {
 	display: inline-block;
 }
 
-.post__content {
+.entry__content {
 	margin-top: 1rem;
 }
 
@@ -419,7 +419,7 @@ th {
 	color: #666;
 }
 
-.post__footer {
+.entry__footer {
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: space-between;
@@ -428,7 +428,7 @@ th {
 	border-top: 1px solid #ccc;
 }
 
-.post__tag {
+.entry__tag {
 	display: inline-block;
 	padding: .125rem .5rem;
 	margin: .25rem;
@@ -437,13 +437,13 @@ th {
 	border-radius: 2px;
 }
 
-.post__tag:hover {
+.entry__tag:hover {
 	color: #fff;
 	text-decoration: none;
 	background-color: #222;
 }
 
-.post__tags {
+.entry__tags {
 	display: flex;
 	flex-basis: 100%;
 	flex-wrap: wrap;
@@ -451,7 +451,7 @@ th {
 	margin-top: .5rem;
 }
 
-.post__share {
+.entry__share {
 	display: flex;
 	flex-basis: 100%;
 	flex-wrap: wrap;
@@ -512,7 +512,7 @@ th {
 	background-color: #ef3e56;
 }
 
-.post__related {
+.entry__related {
 	flex-basis: 100%;
 	flex-shrink: 1; /* ie */
 	width: 100%;
@@ -655,13 +655,13 @@ th {
 		flex-wrap: wrap;
 	}
 
-	.post__tags {
+	.entry__tags {
 		flex: 1 0 65%;
 		justify-content: flex-start;
 		margin: 0 -.25rem auto;
 	}
 
-	.post__share {
+	.entry__share {
 		flex: 1 0 35%;
 		justify-content: flex-end;
 		margin: 0 -.25rem;

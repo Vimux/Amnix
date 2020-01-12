@@ -1,0 +1,11 @@
+{{- $page := . -}}
+{{- $pageMeta := default .Site.Params.Entry.meta .Params.meta -}}
+
+{{- with $pageMeta }}
+	<div class="entry__meta meta">
+		{{- range . }}
+			{{- $metaFieldPath := printf "entry/meta/%s.html" . -}}
+			{{- partial $metaFieldPath $page -}}
+		{{- end }}
+	</div>
+{{- end }}

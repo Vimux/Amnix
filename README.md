@@ -137,8 +137,8 @@ googleAnalytics = "" # Enable Google Analytics by entering your tracking id
   mathjaxPath = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/MathJax.js" # Specify MathJax path. Optional
   mathjaxConfig = "TeX-AMS-MML_HTMLorMML" # Specify MathJax config. Optional
 
-[Params.Post]
-  meta = ["date"] # Enable post meta fields in given order
+[Params.Entry]
+  meta = ["date"] # Enable meta fields in given order
   share = ["facebook", "twitter", "reddit", "telegram", "linkedin", "vk", "pocket"] # Enable share buttons
 
 [Params.Breadcrumb]
@@ -414,15 +414,15 @@ breadcrumb: false
 ### Meta Fields
 
 Meta fields are page meta information such as publish date, last modification date, reading time, categories, and even
-more. Amnix comes with only one meta field to show post date/time, but you can always create your custom meta field.
+more. Amnix comes with only one meta field to show entry date/time, but you can always create your custom meta field.
 
 You can enable meta fields globally or per page.
 
 To activate meta fields globally you should use the `meta` config key with a list of meta field names as a value under
-`[Params.Post]` section of the config file:
+`[Params.Entry]` section of the config file:
 
 ```toml
-[Params.Post]
+[Params.Entry]
   meta = ["date"]
 ```
 

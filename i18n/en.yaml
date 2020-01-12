@@ -2,8 +2,8 @@
 - id: lastmod-caption
   translation: Updated
 
-# Post
-- id: post-related_title
+# Related
+- id: entry-related_title
   translation: Related
 
 # Widgets

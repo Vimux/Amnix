@@ -1,18 +1,18 @@
 {{ define "main" }}
 	<section class="single">
 		{{ partial "breadcrumb.html" . }}
-		<div class="postbox">
-			<article class="post block">
-				{{- partial "post/post_featured.html" (dict "page" . "IsSingle" true) }}
-				<header class="post__header">
-					<h1 class="post__title">{{ .Title }}</h1>
-					{{ partial "post/post_meta.html" . }}
+		<div class="entrybox">
+			<article class="entry block">
+				{{- partial "entry/featured.html" (dict "page" . "IsSingle" true) }}
+				<header class="entry__header">
+					<h1 class="entry__title">{{ .Title }}</h1>
+					{{ partial "entry/meta.html" . }}
 				</header>
-				<div class="post__content">{{ .Content }}</div>
-				{{ if or (isset $.Params "tags") (default .Site.Params.Post.share .Params.share) }}
-				<footer class="post__footer">
-					{{ partial "post/post_tags.html" . }}
-					{{ partial "post/post_share.html" . }}
+				<div class="entry__content">{{ .Content }}</div>
+				{{ if or (isset $.Params "tags") (default .Site.Params.Entry.share .Params.share) }}
+				<footer class="entry__footer">
+					{{ partial "entry/tags.html" . }}
+					{{ partial "entry/share.html" . }}
 				</footer>
 				{{ end }}
 			</article>

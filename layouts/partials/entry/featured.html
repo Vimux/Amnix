@@ -15,7 +15,7 @@
 		{{ $featured320 := $featured.Resize "320x" }}
 		{{ $featured600 := $featured.Resize "600x" }}
 		{{ $featured900 := $featured.Resize "900x" }}
-		<figure class="post__featured featured">
+		<figure class="entry__featured featured">
 			{{- with $link }}<a class="featured__link" href="{{ . }}">{{ end }}
 				<img class="featured__img" srcset="{{ $featured320.RelPermalink }} 320w, {{ $featured600.RelPermalink }} 600w, {{ $featured900.RelPermalink }} 900w," src="{{ $featured.RelPermalink }}" alt="
 					{{- with $featuredMap -}}
