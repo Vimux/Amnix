@@ -1,5 +1,5 @@
 {{ if and (.Site.DisqusShortname) (.Param "comments") (not .Site.IsServer) }}
-<section class="entry__comments comments block">
+<section class="comments block">
 	{{ template "_internal/disqus.html" . }}
 </section>
 {{ end }}

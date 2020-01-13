@@ -1,8 +1,8 @@
 {{- $relatedMax := (.Site.Params.relatedMax | default 5) }}
 {{- $related := .Site.RegularPages.Related . | first $relatedMax }}
 {{- if and ($related) (.Param "related") }}
-<section class="entry__related related block">
-	<h3 class="related__title">{{ T "entry-related_title" }}</h3>
+<section class="related block">
+	<h3 class="related__title">{{ T "related_title" }}</h3>
 	<ul class="related__list">
 		{{ range $related }}
 		<li class="related__item"><a class="related__link" href="{{ .RelPermalink }}">{{ .Title }}</a></li>

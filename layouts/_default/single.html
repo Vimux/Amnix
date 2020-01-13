@@ -1,7 +1,7 @@
 {{ define "main" }}
 	<section class="single">
 		{{ partial "breadcrumb.html" . }}
-		<div class="entrybox">
+		<div class="single__inner">
 			<article class="entry block">
 				{{- partial "entry/featured.html" (dict "page" . "IsSingle" true) }}
 				<header class="entry__header">
