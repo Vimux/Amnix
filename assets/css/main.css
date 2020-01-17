@@ -100,10 +100,15 @@ th {
 	background-color: #33333a;
 }
 
-.js .header__inner {
+.header__inner {
 	display: flex;
 	align-items: center;
 	padding: .6875rem .875rem .6875rem 1.375rem;
+}
+
+.no-js .header__inner {
+	display: block;
+	padding: 1rem 1.375rem;
 }
 
 .logo {
@@ -142,6 +147,7 @@ th {
 }
 
 .main-nav__list {
+	display: none;
 	padding: 0;
 	margin: 0;
 	font-size: 0;
@@ -149,19 +155,20 @@ th {
 }
 
 .no-js .main-nav__list {
+	display: block;
 	margin-top: 1rem;
 }
 
 .main-nav__item {
-	padding: .5rem 0;
+	padding: .5rem 1.375rem;
 	font-size: 1rem;
 	font-weight: 600;
 	color: #bbb;
 	border-bottom: 1px solid #5b5b67;
 }
 
-.js .main-nav__item {
-	padding: .5rem 1.375rem;
+.no-js .main-nav__item {
+	padding: .5rem 0;
 }
 
 .main-nav__item:first-child {
@@ -189,10 +196,6 @@ th {
 	display: none;
 }
 
-.js .main-nav__list {
-	display: none;
-}
-
 .main-nav__list.main-nav__list--active {
 	position: absolute;
 	top: 3.5rem;
@@ -205,7 +208,7 @@ th {
 }
 
 @media (min-width: 860px) {
-	.js .header__inner {
+	.header__inner {
 		display: block;
 		padding: 1rem 1.375rem;
 	}
@@ -214,12 +217,12 @@ th {
 		display: inline-block;
 	}
 
-	.js .main-nav {
+	.main-nav {
 		margin-left: auto;
 	}
 
-	.js .main-nav__list,
-	.no-js .main-nav__list {
+	.no-js .main-nav__list,
+	.main-nav__list {
 		display: block;
 		margin-top: 0;
 	}
@@ -232,11 +235,14 @@ th {
 		display: inline-block;
 	}
 
-	.js .main-nav__item,
 	.main-nav__item {
 		display: inline-block;
 		padding: 0 .5rem;
 		border: 0;
+	}
+
+	.no-js .main-nav__item {
+		padding: 0 .5rem;
 	}
 
 	.main-nav__item:first-child {
