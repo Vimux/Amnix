@@ -1,31 +1,32 @@
 # Meta
 - id: lastmod-caption
-  translation: Updated
+  translation: "Updated"
 
 # Related
 - id: related_title
-  translation: Related
+  translation: "Related"
 
 # Widgets
 - id: widget-recent_title
-  translation: Recent Posts
+  translation: "Recent Posts"
 
 - id: widget-categories_title
-  translation: Categories
+  translation: "Categories"
 
 - id: widget-tags_title
-  translation: Tags
+  translation: "Tags"
 
 - id: widget-sidemenu_title
-  translation: Menu
+  translation: "Menu"
 
 # Share
 - id: share-caption
-  translation: Share on
+  translation: "Share on"
 
 # Footer
 - id: footer_credits
-  translation: "Powered by <a href=\"https://gohugo.io/\" rel=\"nofollow noopener\" target=\"_blank\">Hugo</a> and <a href=\"https://github.com/vimux/amnix\" rel=\"nofollow noopener\" target=\"_blank\">Amnix</a> theme."
+  translation: "Powered by <a href=\"https://gohugo.io/\" rel=\"nofollow noopener\" target=\"_blank\">Hugo</a> and \
+  <a href=\"https://github.com/vimux/amnix\" rel=\"nofollow noopener\" target=\"_blank\">Amnix</a> theme."
 
 # "No posts" empty state
 - id: empty_title
