@@ -7,25 +7,25 @@
 [[items]]
   id = "twitter"
   title = "Twitter"
-  url = "https://twitter.com/intent/tweet/?url={{ .Permalink }}&amp;text={{ .Title }}"
+  url = "https://twitter.com/intent/tweet/?url={{ .Permalink }}&text={{ .Title }}"
   icon = "svg/twitter.svg"
 
 [[items]]
   id = "reddit"
   title = "Reddit"
-  url = "https://www.reddit.com/submit?url={{ .Permalink }}&amp;title={{ .Title }}"
+  url = "https://www.reddit.com/submit?url={{ .Permalink }}&title={{ .Title }}"
   icon = "svg/reddit.svg"
 
 [[items]]
   id = "telegram"
   title = "Telegram"
-  url = "https://t.me/share/url?url={{ .Permalink }}&amp;title={{ .Title }}"
+  url = "https://t.me/share/url?url={{ .Permalink }}&title={{ .Title }}"
   icon = "svg/telegram.svg"
 
 [[items]]
   id = "linkedin"
   title = "LinkedIn"
-  url = "https://www.linkedin.com/shareArticle?mini=true&amp;url={{ .Permalink }}&amp;title={{ .Title }}"
+  url = "https://www.linkedin.com/shareArticle?mini=true&url={{ .Permalink }}&title={{ .Title }}"
   icon = "svg/linkedin.svg"
 
 [[items]]
@@ -37,5 +37,5 @@
 [[items]]
   id = "pocket"
   title = "Pocket"
-  url = "https://getpocket.com/edit?url={{ .Permalink }}&amp;title={{ .Title }}"
+  url = "https://getpocket.com/edit?url={{ .Permalink }}&title={{ .Title }}"
   icon = "svg/pocket.svg"
