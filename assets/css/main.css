@@ -68,7 +68,7 @@ th {
 
 td,
 th {
-	padding: .3125rem .625rem;
+	padding: .375rem .625rem;
 	border-right: 1px solid #ddd;
 	border-bottom: 1px solid #ddd;
 }
@@ -371,7 +371,7 @@ th {
 
 .breadcrumb__item::after {
 	display: block;
-	margin: 0 .3125rem;
+	margin: 0 .25rem;
 	content: "›";
 }
 
