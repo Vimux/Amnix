@@ -41,7 +41,7 @@ blockquote footer {
 
 pre {
 	padding: 1rem;
-	color: #eee;
+	color: #ddd;
 	background-color: #222;
 }
 
@@ -96,7 +96,7 @@ th {
 .header {
 	flex: 0 0 auto;
 	margin-bottom: .25rem;
-	color: #8d8d9b;
+	color: #9f9fab;
 	background-color: #33333a;
 }
 
@@ -384,8 +384,8 @@ th {
 	width: 100%;
 	padding: .625rem 1rem;
 	text-align: left;
-	background: #f4f5f7;
-	border-color: #e1e1e1;
+	background: #eaecf0;
+	border-color: #ddd;
 	border-style: solid;
 	border-width: 0;
 	border-top-width: 1px;
@@ -439,7 +439,7 @@ th {
 	padding: .125rem .5rem;
 	margin: .25rem;
 	color: #666;
-	background-color: #ededed;
+	background-color: #eaecf0;
 	border-radius: 2px;
 }
 
@@ -636,7 +636,7 @@ th {
 	padding: .125rem .75rem;
 	margin: .25rem;
 	color: #666;
-	background: #ededed;
+	background: #eaecf0;
 	border-radius: 2px;
 }
 
