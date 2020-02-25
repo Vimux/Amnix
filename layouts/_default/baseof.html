@@ -37,7 +37,7 @@
 	{{- end }}
 </head>
 <body>
-	{{ partial "header" . }}
+	{{ block "header" . }}{{ partial "header" . }}{{ end }}
 	<div class="wrapper wrapper--flex">
 		{{ block "main" . }}
 			{{- if or .Title .Content }}
@@ -47,9 +47,11 @@
 			</div>
 			{{ end }}
 		{{ end }}
-		{{ partial "sidebar.html" . }}
+		{{ block "sidebar" . }}
+			{{ partial "sidebar.html" . }}
+		{{ end }}
 	</div>
-	{{ partial "footer" . }}
+	{{ block "footer" . }}{{ partial "footer" . }}{{ end }}
 {{- if .Site.Menus.main }}
 <script src="{{ "js/menu.js" | relURL }}"></script>
 {{- end }}
