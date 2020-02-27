@@ -125,6 +125,7 @@ googleAnalytics = "" # Enable Google Analytics by entering your tracking id
   copyright = "Amnix" # Footer copyright holder, otherwise will use .Site.Title
   copyrightStartYear = 2019 # Footer copyright start year
   opengraph = true # Enable OpenGraph
+  schema = true # Enable Schema
   twitterCards = true # Enable Twitter Cards
   columns = 2 # Set the number of content cards columns. Possible values: 1, 2, 3
   mainSections = ["post"] # Set main page sections
