@@ -38,6 +38,7 @@
 	{{- if not .Site.IsServer }}
 		{{ template "_internal/google_analytics_async.html" . }}
 	{{- end }}
+	{{ partial "head_custom.html" . }}
 </head>
 <body class="body kind-{{ .Kind }} type-{{ .Type }}">
 	{{ block "header" . }}{{ partial "header" . }}{{ end }}
@@ -56,5 +57,6 @@
 	</div>
 	{{ block "footer" . }}{{ partial "footer" . }}{{ end }}
 	{{ partial "scripts.html" . }}
+	{{ partial "body_custom.html" . }}
 </body>
 </html>
