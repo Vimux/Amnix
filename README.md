@@ -2,7 +2,7 @@
 
 **Amnix** is a responsive and configurable [Hugo](https://gohugo.io/) theme.
 
-**[Demo](https://amnix.netlify.com/)**
+**[Demo](https://amnix.netlify.app/)**
 
 ![Amnix theme screenshot](https://github.com/vimux/amnix/blob/master/images/tn.png)
 
