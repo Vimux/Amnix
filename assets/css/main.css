@@ -134,6 +134,12 @@ th {
 	fill: #9f9fab;
 }
 
+.main-nav__btn:focus {
+	border-radius: 2px;
+	outline: none;
+	box-shadow: 0 0 0 3px rgba(150, 150, 163, .5);
+}
+
 .main-nav__btn .icon-menu__x {
 	display: none;
 }
