@@ -1,0 +1,29 @@
+name: Test Hugo versions
+
+on: [push, pull_request]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        hugo-version:
+          - 'latest'
+          - '0.60.1' # first major version with goldmark renderer
+          - '0.59.1' # last major version without goldmark renderer
+          - '0.58.2' # https://github.com/gohugoio/hugoThemes/issues/682
+          - '0.54.0' # min version
+
+      fail-fast: true
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Run Hugo ${{ matrix.hugo }}
+        uses: peaceiris/actions-hugo@v2
+        with:
+          hugo-version: ${{ matrix.hugo-version }}
+
+      - name: Build with Hugo ${{ matrix.hugo }}
+        working-directory: exampleSite
+        run: hugo --themesDir ../.. --i18n-warnings -v
