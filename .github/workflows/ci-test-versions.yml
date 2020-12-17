@@ -1,6 +1,14 @@
-name: Test Hugo versions
+name: Test
 
-on: [push, pull_request]
+on:
+  push:
+    branches:
+      - master
+    paths-ignore:
+      - "README.md"
+  pull_request:
+    paths-ignore:
+      - "README.md"
 
 jobs:
   build:
@@ -13,13 +21,12 @@ jobs:
           - '0.59.1' # last major version without goldmark renderer
           - '0.60.1' # first major version with goldmark renderer
           - 'latest'
-
       fail-fast: true
 
     steps:
       - uses: actions/checkout@v2
 
-      - name: Setup Hugo ${{ matrix.hugo-version }}
+      - name: Run Hugo ${{ matrix.hugo-version }}
         uses: peaceiris/actions-hugo@v2
         with:
           hugo-version: ${{ matrix.hugo-version }}
