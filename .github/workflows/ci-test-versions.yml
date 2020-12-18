@@ -20,6 +20,7 @@ jobs:
           - '0.58.2' # https://github.com/gohugoio/hugoThemes/issues/682
           - '0.59.1' # last major version without goldmark renderer
           - '0.60.1' # first major version with goldmark renderer
+          - '0.76.5' # https://github.com/gohugoio/hugo/issues/7822
           - 'latest'
       fail-fast: true
 
