@@ -116,8 +116,13 @@ title = "Amnix"
 languageCode = "en-us"
 paginate = "10" # Number of posts per page
 theme = "amnix"
-disqusShortname = "" # Enable comments by entering your Disqus shortname
-googleAnalytics = "" # Enable Google Analytics by entering your tracking id
+disqusShortname = "" # DEPRECATED! Use .Services.Disqus.Shortname
+googleAnalytics = "" # DEPRECATED! Use .Services.googleAnalytics.ID
+
+[services.disqus]
+  shortname = "" # Enable Disqus by entering your Disqus shortname
+[services.googleAnalytics]
+  ID = "" # Enable Google Analytics by entering your tracking ID
 
 [Params]
   logoText = "Amnix" # Logo text, otherwise will use .Site.Title
